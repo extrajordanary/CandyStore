@@ -12,24 +12,24 @@
         <scene sceneID="juZ-1K-rpD">
             <objects>
                 <tableViewController id="tF9-Q0-wLz" customClass="CandyListTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="4JU-sG-HBa">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="4JU-sG-HBa">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CandyCell" id="jY0-vE-vqX">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="CandyCell" id="jY0-vE-vqX">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jY0-vE-vqX" id="nzF-RQ-wE8">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Candy Name is really long" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tpy-FQ-Ymd">
-                                            <rect key="frame" x="144" y="8" width="407" height="27"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Candy Name is really long" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tpy-FQ-Ymd">
+                                            <rect key="frame" x="238" y="8" width="346" height="83"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                             <color key="textColor" red="0.89157562359999998" green="0.41494271560000001" blue="0.91416864809999998" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T5b-ZM-05v">
-                                            <rect key="frame" x="0.0" y="0.0" width="136" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="230" height="99"/>
                                             <color key="backgroundColor" red="0.91032082759999999" green="0.97616084250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="100" id="YX1-mg-Qkw"/>
@@ -44,7 +44,7 @@
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="Tpy-FQ-Ymd" secondAttribute="trailing" constant="8" id="AMp-8l-8Xa"/>
                                         <constraint firstItem="T5b-ZM-05v" firstAttribute="top" secondItem="nzF-RQ-wE8" secondAttribute="topMargin" constant="-8" id="CQB-2k-7m0"/>
-                                        <constraint firstItem="T5b-ZM-05v" firstAttribute="width" secondItem="Tpy-FQ-Ymd" secondAttribute="width" multiplier="1:3" id="YFO-6o-T8Q"/>
+                                        <constraint firstItem="T5b-ZM-05v" firstAttribute="width" secondItem="Tpy-FQ-Ymd" secondAttribute="width" multiplier="2:3" id="YFO-6o-T8Q"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Tpy-FQ-Ymd" secondAttribute="bottom" id="bA8-wT-wPX"/>
                                         <constraint firstItem="Tpy-FQ-Ymd" firstAttribute="leading" secondItem="T5b-ZM-05v" secondAttribute="trailing" constant="8" id="htC-Rf-xvr"/>
                                         <constraint firstItem="T5b-ZM-05v" firstAttribute="leading" secondItem="nzF-RQ-wE8" secondAttribute="leadingMargin" constant="-8" id="ve6-NO-FtY"/>
