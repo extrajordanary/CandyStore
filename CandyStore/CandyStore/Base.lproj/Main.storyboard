@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7Nk-cZ-tW3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -69,7 +71,7 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eph-F5-7iJ">
-                                <rect key="frame" x="16" y="72" width="568" height="40"/>
+                                <rect key="frame" x="205" y="72" width="379" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="HKh-jO-Xl6"/>
                                 </constraints>
@@ -78,30 +80,78 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nf7-ig-XQc">
-                                <rect key="frame" x="150" y="170" width="300" height="300"/>
+                                <rect key="frame" x="8" y="74" width="189" height="189"/>
                                 <color key="backgroundColor" red="0.91032082759999999" green="0.97616084250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="lcA-Ji-5Gp"/>
-                                    <constraint firstAttribute="height" constant="300" id="vNE-9V-y6H"/>
+                                    <constraint firstAttribute="height" priority="250" constant="200" id="2RV-QR-mlW"/>
+                                    <constraint firstAttribute="height" secondItem="Nf7-ig-XQc" secondAttribute="width" multiplier="1:1" id="MKd-D5-iAB"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="2RV-QR-mlW"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lSq-S5-2Ya">
+                                <rect key="frame" x="205" y="74" width="190" height="189"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" priority="250" constant="200" id="3Uy-XZ-dxe"/>
+                                    <constraint firstAttribute="height" secondItem="lSq-S5-2Ya" secondAttribute="width" multiplier="1:1" id="jJ2-Zd-XXc"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="3Uy-XZ-dxe"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QJt-As-7K7">
+                                <rect key="frame" x="403" y="74" width="189" height="189"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" priority="250" constant="200" id="N7w-vO-9Sb"/>
+                                    <constraint firstAttribute="height" secondItem="QJt-As-7K7" secondAttribute="width" multiplier="1:1" id="cOs-6o-gg3"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="N7w-vO-9Sb"/>
+                                    </mask>
+                                </variation>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Ex4-Mm-CDu" firstAttribute="top" secondItem="Nf7-ig-XQc" secondAttribute="bottom" priority="750" constant="10" id="1dG-W9-pce"/>
+                            <constraint firstItem="QJt-As-7K7" firstAttribute="leading" secondItem="lSq-S5-2Ya" secondAttribute="trailing" constant="8" id="2xa-Al-3pN"/>
                             <constraint firstItem="c3X-nS-Wc9" firstAttribute="top" secondItem="Ex4-Mm-CDu" secondAttribute="bottom" constant="8" id="J59-oR-oRL"/>
                             <constraint firstAttribute="centerX" secondItem="Ex4-Mm-CDu" secondAttribute="centerX" id="L7D-c8-hlb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eph-F5-7iJ" secondAttribute="trailing" id="OlD-HS-1NS"/>
+                            <constraint firstItem="Nf7-ig-XQc" firstAttribute="width" secondItem="QJt-As-7K7" secondAttribute="width" id="QKa-hv-bWF"/>
+                            <constraint firstItem="Nf7-ig-XQc" firstAttribute="leading" secondItem="JFV-Ku-N7R" secondAttribute="leadingMargin" constant="-8" id="Sdj-0C-0bx"/>
+                            <constraint firstItem="QJt-As-7K7" firstAttribute="top" secondItem="zGj-nY-ThW" secondAttribute="bottom" constant="10" id="TwN-5k-PAK"/>
+                            <constraint firstItem="lSq-S5-2Ya" firstAttribute="leading" secondItem="Nf7-ig-XQc" secondAttribute="trailing" constant="8" id="WC1-gc-eih"/>
+                            <constraint firstItem="eph-F5-7iJ" firstAttribute="leading" secondItem="Nf7-ig-XQc" secondAttribute="trailing" constant="8" id="cWB-ln-dcd"/>
+                            <constraint firstItem="Nf7-ig-XQc" firstAttribute="top" secondItem="zGj-nY-ThW" secondAttribute="bottom" constant="10" id="dAE-QU-GBf"/>
+                            <constraint firstItem="lSq-S5-2Ya" firstAttribute="top" secondItem="zGj-nY-ThW" secondAttribute="bottom" constant="10" id="dQw-bv-dfF"/>
                             <constraint firstAttribute="centerX" secondItem="Nf7-ig-XQc" secondAttribute="centerX" id="dvq-ey-KDq"/>
+                            <constraint firstItem="Nf7-ig-XQc" firstAttribute="width" secondItem="lSq-S5-2Ya" secondAttribute="width" id="ff3-Ec-rd9"/>
                             <constraint firstItem="eph-F5-7iJ" firstAttribute="top" secondItem="zGj-nY-ThW" secondAttribute="bottom" constant="8" id="gAP-Ws-yGw"/>
                             <constraint firstAttribute="centerY" secondItem="Nf7-ig-XQc" secondAttribute="centerY" constant="-20" id="mcn-qm-EPc"/>
-                            <constraint firstItem="eph-F5-7iJ" firstAttribute="leading" secondItem="JFV-Ku-N7R" secondAttribute="leadingMargin" id="rew-vv-LM8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QJt-As-7K7" secondAttribute="trailing" constant="-8" id="pko-LC-efC"/>
+                            <constraint firstItem="eph-F5-7iJ" firstAttribute="centerX" secondItem="JFV-Ku-N7R" secondAttribute="centerXWithinMargins" id="rew-vv-LM8"/>
                         </constraints>
-                        <variation key="heightClass=compact-widthClass=compact"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="dvq-ey-KDq"/>
+                                <exclude reference="mcn-qm-EPc"/>
+                                <exclude reference="rew-vv-LM8"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XCq-3E-Wds" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1961" y="542"/>
+            <point key="canvasLocation" x="2005" y="536"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Lsw-Xv-UGQ">
