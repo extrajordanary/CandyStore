@@ -77,16 +77,26 @@
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nf7-ig-XQc">
+                                <rect key="frame" x="150" y="170" width="300" height="300"/>
+                                <color key="backgroundColor" red="0.91032082759999999" green="0.97616084250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="lcA-Ji-5Gp"/>
+                                    <constraint firstAttribute="height" constant="300" id="vNE-9V-y6H"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="c3X-nS-Wc9" firstAttribute="top" secondItem="Ex4-Mm-CDu" secondAttribute="bottom" constant="8" id="J59-oR-oRL"/>
                             <constraint firstAttribute="centerX" secondItem="Ex4-Mm-CDu" secondAttribute="centerX" id="L7D-c8-hlb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eph-F5-7iJ" secondAttribute="trailing" id="OlD-HS-1NS"/>
-                            <constraint firstAttribute="centerX" secondItem="eph-F5-7iJ" secondAttribute="centerX" id="cqP-xd-hbR"/>
+                            <constraint firstAttribute="centerX" secondItem="Nf7-ig-XQc" secondAttribute="centerX" id="dvq-ey-KDq"/>
                             <constraint firstItem="eph-F5-7iJ" firstAttribute="top" secondItem="zGj-nY-ThW" secondAttribute="bottom" constant="8" id="gAP-Ws-yGw"/>
+                            <constraint firstAttribute="centerY" secondItem="Nf7-ig-XQc" secondAttribute="centerY" constant="-20" id="mcn-qm-EPc"/>
                             <constraint firstItem="eph-F5-7iJ" firstAttribute="leading" secondItem="JFV-Ku-N7R" secondAttribute="leadingMargin" id="rew-vv-LM8"/>
                         </constraints>
+                        <variation key="heightClass=compact-widthClass=compact"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XCq-3E-Wds" userLabel="First Responder" sceneMemberID="firstResponder"/>
