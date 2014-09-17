@@ -8,6 +8,24 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
+        <!--Add Candy-->
+        <scene sceneID="4zI-Hd-Ktq">
+            <objects>
+                <viewController title="Add Candy" id="vhc-sa-xuH" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fSL-Ge-rwt"/>
+                        <viewControllerLayoutGuide type="bottom" id="NNu-ug-dVu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CJ0-I0-aQr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OUc-fB-8LC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2009" y="-162"/>
+        </scene>
         <!--Candy List Table View Controller-->
         <scene sceneID="juZ-1K-rpD">
             <objects>
@@ -65,17 +83,21 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="Ka0-RG-0qq">
                         <barButtonItem key="leftBarButtonItem" title="Chat" id="CdI-Dz-EbG"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="wMx-Pe-yKA"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="wMx-Pe-yKA">
+                            <connections>
+                                <segue destination="vhc-sa-xuH" kind="show" id="DrX-3k-94E"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SC0-T6-1De" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1136" y="540"/>
         </scene>
-        <!--View Controller-->
+        <!--Candy Detail-->
         <scene sceneID="NTY-Cp-T47">
             <objects>
-                <viewController id="LmP-eo-1gk" sceneMemberID="viewController">
+                <viewController title="Candy Detail" id="LmP-eo-1gk" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zGj-nY-ThW"/>
                         <viewControllerLayoutGuide type="bottom" id="c3X-nS-Wc9"/>
@@ -84,7 +106,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ex4-Mm-CDu">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ex4-Mm-CDu">
                                 <rect key="frame" x="208" y="567" width="384" height="25"/>
                                 <color key="backgroundColor" red="1" green="0.84435032290000001" blue="0.98648021409999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -100,6 +122,9 @@
                                         <exclude reference="W0m-cZ-qjT"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <segue destination="qUq-QL-x4E" kind="show" id="CA4-CF-rwI"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Candy Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eph-F5-7iJ">
                                 <rect key="frame" x="8" y="72" width="584" height="40"/>
@@ -180,6 +205,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XCq-3E-Wds" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2009" y="542"/>
+        </scene>
+        <!--Where to Buy-->
+        <scene sceneID="Jwo-Uw-uBO">
+            <objects>
+                <viewController title="Where to Buy" id="qUq-QL-x4E" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pJy-1m-utn"/>
+                        <viewControllerLayoutGuide type="bottom" id="F2S-Fn-O2y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6zb-Fo-6TP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="doa-Ig-gO9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2812" y="540"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Lsw-Xv-UGQ">
