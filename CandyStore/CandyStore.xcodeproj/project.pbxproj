@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1712B3F619CA526E00290C44 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1712B3F519CA526E00290C44 /* MapKit.framework */; };
 		17AD79C519C8F171005F3FF3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17AD79C419C8F171005F3FF3 /* main.m */; };
 		17AD79C819C8F171005F3FF3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17AD79C719C8F171005F3FF3 /* AppDelegate.m */; };
 		17AD79CB19C8F171005F3FF3 /* CandyStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17AD79C919C8F171005F3FF3 /* CandyStore.xcdatamodeld */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1712B3F519CA526E00290C44 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		17AD79BF19C8F171005F3FF3 /* CandyStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CandyStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17AD79C319C8F171005F3FF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17AD79C419C8F171005F3FF3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -49,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1712B3F619CA526E00290C44 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +68,7 @@
 		17AD79B619C8F171005F3FF3 = {
 			isa = PBXGroup;
 			children = (
+				1712B3F519CA526E00290C44 /* MapKit.framework */,
 				17AD79C119C8F171005F3FF3 /* CandyStore */,
 				17AD79DE19C8F172005F3FF3 /* CandyStoreTests */,
 				17AD79C019C8F171005F3FF3 /* Products */,
@@ -416,6 +420,7 @@
 				17AD79E719C8F172005F3FF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		17AD79E819C8F172005F3FF3 /* Build configuration list for PBXNativeTarget "CandyStoreTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +429,7 @@
 				17AD79EA19C8F172005F3FF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
