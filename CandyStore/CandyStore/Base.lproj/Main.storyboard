@@ -26,6 +26,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="LmP-eo-1gk" kind="show" id="BnS-kM-g2n"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -38,6 +41,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SC0-T6-1De" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1136" y="542"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="NTY-Cp-T47">
+            <objects>
+                <viewController id="LmP-eo-1gk" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zGj-nY-ThW"/>
+                        <viewControllerLayoutGuide type="bottom" id="c3X-nS-Wc9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JFV-Ku-N7R">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ex4-Mm-CDu">
+                                <rect key="frame" x="150" y="552" width="300" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="1vo-Vv-wCV"/>
+                                    <constraint firstAttribute="width" constant="300" id="W0m-cZ-qjT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Where to Buy">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="c3X-nS-Wc9" firstAttribute="top" secondItem="Ex4-Mm-CDu" secondAttribute="bottom" constant="8" id="J59-oR-oRL"/>
+                            <constraint firstAttribute="centerX" secondItem="Ex4-Mm-CDu" secondAttribute="centerX" id="L7D-c8-hlb"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XCq-3E-Wds" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1961" y="542"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Lsw-Xv-UGQ">
