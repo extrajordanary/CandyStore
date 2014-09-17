@@ -17,19 +17,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CandyCell" textLabel="p0s-yU-EBU" style="IBUITableViewCellStyleDefault" id="jY0-vE-vqX">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CandyCell" id="jY0-vE-vqX">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jY0-vE-vqX" id="nzF-RQ-wE8">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p0s-yU-EBU">
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Candy Name is really long" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tpy-FQ-Ymd">
+                                            <rect key="frame" x="144" y="8" width="407" height="27"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="textColor" red="0.89157562359999998" green="0.41494271560000001" blue="0.91416864809999998" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T5b-ZM-05v">
+                                            <rect key="frame" x="0.0" y="0.0" width="136" height="43"/>
+                                            <color key="backgroundColor" red="0.91032082759999999" green="0.97616084250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="YX1-mg-Qkw"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="YX1-mg-Qkw"/>
+                                                </mask>
+                                            </variation>
+                                        </imageView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Tpy-FQ-Ymd" secondAttribute="trailing" constant="8" id="AMp-8l-8Xa"/>
+                                        <constraint firstItem="T5b-ZM-05v" firstAttribute="top" secondItem="nzF-RQ-wE8" secondAttribute="topMargin" constant="-8" id="CQB-2k-7m0"/>
+                                        <constraint firstItem="T5b-ZM-05v" firstAttribute="width" secondItem="Tpy-FQ-Ymd" secondAttribute="width" multiplier="1:3" id="YFO-6o-T8Q"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Tpy-FQ-Ymd" secondAttribute="bottom" id="bA8-wT-wPX"/>
+                                        <constraint firstItem="Tpy-FQ-Ymd" firstAttribute="leading" secondItem="T5b-ZM-05v" secondAttribute="trailing" constant="8" id="htC-Rf-xvr"/>
+                                        <constraint firstItem="T5b-ZM-05v" firstAttribute="leading" secondItem="nzF-RQ-wE8" secondAttribute="leadingMargin" constant="-8" id="ve6-NO-FtY"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="T5b-ZM-05v" secondAttribute="bottom" constant="-8" id="xVU-0h-fjm"/>
+                                        <constraint firstItem="Tpy-FQ-Ymd" firstAttribute="top" secondItem="nzF-RQ-wE8" secondAttribute="topMargin" id="xXa-Dq-0m1"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="1" green="0.84435032290000001" blue="0.98648021409999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="LmP-eo-1gk" kind="show" id="BnS-kM-g2n"/>
                                 </connections>
@@ -40,11 +63,14 @@
                             <outlet property="delegate" destination="tF9-Q0-wLz" id="Ry0-gd-eKO"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Ka0-RG-0qq"/>
+                    <navigationItem key="navigationItem" id="Ka0-RG-0qq">
+                        <barButtonItem key="leftBarButtonItem" title="Chat" id="CdI-Dz-EbG"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="wMx-Pe-yKA"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SC0-T6-1De" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1136" y="542"/>
+            <point key="canvasLocation" x="1136" y="540"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="NTY-Cp-T47">
@@ -58,7 +84,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ex4-Mm-CDu">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ex4-Mm-CDu">
                                 <rect key="frame" x="208" y="567" width="384" height="25"/>
                                 <color key="backgroundColor" red="1" green="0.84435032290000001" blue="0.98648021409999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -98,14 +124,13 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PB1-W4-j5i">
+                            <textView clipsSubviews="YES" contentMode="scaleToFill" editable="NO" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PB1-W4-j5i">
                                 <rect key="frame" x="208" y="120" width="384" height="439"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                 <color key="textColor" red="0.067663754406141183" green="0.49737424792167068" blue="0.68454908288043481" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
