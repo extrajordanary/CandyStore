@@ -14,6 +14,7 @@
 		17AD79D319C8F171005F3FF3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17AD79D219C8F171005F3FF3 /* Images.xcassets */; };
 		17AD79D619C8F172005F3FF3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17AD79D419C8F172005F3FF3 /* LaunchScreen.xib */; };
 		17AD79E219C8F172005F3FF3 /* CandyStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17AD79E119C8F172005F3FF3 /* CandyStoreTests.m */; };
+		17AD79ED19C9022F005F3FF3 /* CandyListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17AD79EC19C9022F005F3FF3 /* CandyListTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,8 @@
 		17AD79DB19C8F172005F3FF3 /* CandyStoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CandyStoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17AD79E019C8F172005F3FF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17AD79E119C8F172005F3FF3 /* CandyStoreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CandyStoreTests.m; sourceTree = "<group>"; };
+		17AD79EB19C9022F005F3FF3 /* CandyListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CandyListTableViewController.h; sourceTree = "<group>"; };
+		17AD79EC19C9022F005F3FF3 /* CandyListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CandyListTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +83,8 @@
 		17AD79C119C8F171005F3FF3 /* CandyStore */ = {
 			isa = PBXGroup;
 			children = (
+				17AD79EB19C9022F005F3FF3 /* CandyListTableViewController.h */,
+				17AD79EC19C9022F005F3FF3 /* CandyListTableViewController.m */,
 				17AD79C619C8F171005F3FF3 /* AppDelegate.h */,
 				17AD79C719C8F171005F3FF3 /* AppDelegate.m */,
 				17AD79CF19C8F171005F3FF3 /* Main.storyboard */,
@@ -220,6 +225,7 @@
 				17AD79CB19C8F171005F3FF3 /* CandyStore.xcdatamodeld in Sources */,
 				17AD79C819C8F171005F3FF3 /* AppDelegate.m in Sources */,
 				17AD79C519C8F171005F3FF3 /* main.m in Sources */,
+				17AD79ED19C9022F005F3FF3 /* CandyListTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
