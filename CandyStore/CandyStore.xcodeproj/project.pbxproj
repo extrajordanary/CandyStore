@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1712B3F619CA526E00290C44 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1712B3F519CA526E00290C44 /* MapKit.framework */; };
+		1712B3F919CA597400290C44 /* CandyPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1712B3F819CA597400290C44 /* CandyPictureViewController.m */; };
 		17AD79C519C8F171005F3FF3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17AD79C419C8F171005F3FF3 /* main.m */; };
 		17AD79C819C8F171005F3FF3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17AD79C719C8F171005F3FF3 /* AppDelegate.m */; };
 		17AD79CB19C8F171005F3FF3 /* CandyStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17AD79C919C8F171005F3FF3 /* CandyStore.xcdatamodeld */; };
@@ -30,6 +31,8 @@
 
 /* Begin PBXFileReference section */
 		1712B3F519CA526E00290C44 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		1712B3F719CA597300290C44 /* CandyPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CandyPictureViewController.h; sourceTree = "<group>"; };
+		1712B3F819CA597400290C44 /* CandyPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CandyPictureViewController.m; sourceTree = "<group>"; };
 		17AD79BF19C8F171005F3FF3 /* CandyStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CandyStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17AD79C319C8F171005F3FF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17AD79C419C8F171005F3FF3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -87,6 +90,8 @@
 		17AD79C119C8F171005F3FF3 /* CandyStore */ = {
 			isa = PBXGroup;
 			children = (
+				1712B3F719CA597300290C44 /* CandyPictureViewController.h */,
+				1712B3F819CA597400290C44 /* CandyPictureViewController.m */,
 				17AD79EB19C9022F005F3FF3 /* CandyListTableViewController.h */,
 				17AD79EC19C9022F005F3FF3 /* CandyListTableViewController.m */,
 				17AD79C619C8F171005F3FF3 /* AppDelegate.h */,
@@ -229,6 +234,7 @@
 				17AD79CB19C8F171005F3FF3 /* CandyStore.xcdatamodeld in Sources */,
 				17AD79C819C8F171005F3FF3 /* AppDelegate.m in Sources */,
 				17AD79C519C8F171005F3FF3 /* main.m in Sources */,
+				1712B3F919CA597400290C44 /* CandyPictureViewController.m in Sources */,
 				17AD79ED19C9022F005F3FF3 /* CandyListTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -113,7 +113,7 @@
                                     <constraint firstAttribute="height" constant="25" id="1vo-Vv-wCV"/>
                                     <constraint firstAttribute="width" constant="300" id="W0m-cZ-qjT"/>
                                 </constraints>
-                                <state key="normal" title="Where to Buy">
+                                <state key="normal" title="Where is this Candy?">
                                     <color key="titleColor" red="0.89157562359999998" green="0.41494271560000001" blue="0.91416864809999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -245,7 +245,9 @@
                                     </imageView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="496" id="BzG-4o-qV9"/>
                                     <constraint firstAttribute="width" constant="200" id="GC9-fl-WX3"/>
+                                    <constraint firstAttribute="width" constant="528" id="J2U-xI-7I6"/>
                                     <constraint firstItem="qRX-0q-f30" firstAttribute="top" secondItem="we4-9s-QvP" secondAttribute="topMargin" constant="100" id="VFT-hb-Pjf"/>
                                     <constraint firstAttribute="bottom" secondItem="qRX-0q-f30" secondAttribute="bottom" id="Vnc-EW-fQM"/>
                                     <constraint firstAttribute="trailing" secondItem="qRX-0q-f30" secondAttribute="trailing" id="YfF-yl-I1I"/>
