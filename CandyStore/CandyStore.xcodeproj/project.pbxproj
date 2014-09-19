@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1712B3F619CA526E00290C44 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1712B3F519CA526E00290C44 /* MapKit.framework */; };
 		1712B3F919CA597400290C44 /* CandyPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1712B3F819CA597400290C44 /* CandyPictureViewController.m */; };
+		1781DEB819CCBF0400EEEECB /* hedgehogChocolate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1781DEB719CCBF0400EEEECB /* hedgehogChocolate.jpg */; };
 		17AD79C519C8F171005F3FF3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17AD79C419C8F171005F3FF3 /* main.m */; };
 		17AD79C819C8F171005F3FF3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17AD79C719C8F171005F3FF3 /* AppDelegate.m */; };
 		17AD79CB19C8F171005F3FF3 /* CandyStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 17AD79C919C8F171005F3FF3 /* CandyStore.xcdatamodeld */; };
@@ -33,6 +34,7 @@
 		1712B3F519CA526E00290C44 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		1712B3F719CA597300290C44 /* CandyPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CandyPictureViewController.h; sourceTree = "<group>"; };
 		1712B3F819CA597400290C44 /* CandyPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CandyPictureViewController.m; sourceTree = "<group>"; };
+		1781DEB719CCBF0400EEEECB /* hedgehogChocolate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = hedgehogChocolate.jpg; path = ../hedgehogChocolate.jpg; sourceTree = "<group>"; };
 		17AD79BF19C8F171005F3FF3 /* CandyStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CandyStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17AD79C319C8F171005F3FF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17AD79C419C8F171005F3FF3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 		17AD79C219C8F171005F3FF3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1781DEB719CCBF0400EEEECB /* hedgehogChocolate.jpg */,
 				17AD79C319C8F171005F3FF3 /* Info.plist */,
 				17AD79C419C8F171005F3FF3 /* main.m */,
 			);
@@ -212,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17AD79D119C8F171005F3FF3 /* Main.storyboard in Resources */,
+				1781DEB819CCBF0400EEEECB /* hedgehogChocolate.jpg in Resources */,
 				17AD79D619C8F172005F3FF3 /* LaunchScreen.xib in Resources */,
 				17AD79D319C8F171005F3FF3 /* Images.xcassets in Resources */,
 			);

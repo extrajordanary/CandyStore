@@ -10,4 +10,6 @@
 
 @interface CandyPictureViewController : UIViewController
 
+@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
+
 @end

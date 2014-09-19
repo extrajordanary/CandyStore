@@ -136,7 +136,7 @@
                                 <color key="textColor" red="1" green="0.84435032290000001" blue="0.98648021409999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nf7-ig-XQc">
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hedgehogChocolate.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Nf7-ig-XQc">
                                 <rect key="frame" x="8" y="120" width="192" height="192"/>
                                 <color key="backgroundColor" red="0.91032082759999999" green="0.97616084250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
@@ -150,19 +150,21 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIF-Cu-zqI">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIF-Cu-zqI">
                                 <rect key="frame" x="8" y="120" width="192" height="192"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="Fullscreen">
+                                    <color key="titleColor" red="0.89157562359999998" green="0.41494271560000001" blue="0.91416864809999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="tY4-ah-4My" kind="show" id="WWs-g5-G8L"/>
+                                    <segue destination="tY4-ah-4My" kind="show" id="pxH-yf-rZP"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" contentMode="scaleToFill" editable="NO" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PB1-W4-j5i">
                                 <rect key="frame" x="208" y="120" width="384" height="439"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" red="0.067663754406141183" green="0.49737424792167068" blue="0.68454908288043481" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -224,7 +226,7 @@
         <!--Candy View-->
         <scene sceneID="ncj-4G-yPs">
             <objects>
-                <viewController title="Candy View" id="tY4-ah-4My" sceneMemberID="viewController">
+                <viewController title="Candy View" id="tY4-ah-4My" customClass="CandyPictureViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bRN-hA-Cvb"/>
                         <viewControllerLayoutGuide type="bottom" id="w5S-cX-PiW"/>
@@ -233,41 +235,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" placeholderIntrinsicWidth="400" placeholderIntrinsicHeight="400" translatesAutoresizingMaskIntoConstraints="NO" id="we4-9s-QvP">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="400" placeholderIntrinsicHeight="400" translatesAutoresizingMaskIntoConstraints="NO" id="we4-9s-QvP">
                                 <rect key="frame" x="36" y="84" width="528" height="496"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qRX-0q-f30">
-                                        <rect key="frame" x="108" y="108" width="365" height="273"/>
-                                        <color key="backgroundColor" red="0.89157562359999998" green="0.41494271560000001" blue="0.91416864809999998" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="qRX-0q-f30" secondAttribute="height" multiplier="4:3" id="NhQ-2V-Y1D"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="496" id="BzG-4o-qV9"/>
                                     <constraint firstAttribute="width" constant="200" id="GC9-fl-WX3"/>
                                     <constraint firstAttribute="width" constant="528" id="J2U-xI-7I6"/>
-                                    <constraint firstItem="qRX-0q-f30" firstAttribute="top" secondItem="we4-9s-QvP" secondAttribute="topMargin" constant="100" id="VFT-hb-Pjf"/>
-                                    <constraint firstAttribute="bottom" secondItem="qRX-0q-f30" secondAttribute="bottom" id="Vnc-EW-fQM"/>
-                                    <constraint firstAttribute="trailing" secondItem="qRX-0q-f30" secondAttribute="trailing" id="YfF-yl-I1I"/>
-                                    <constraint firstAttribute="trailing" secondItem="qRX-0q-f30" secondAttribute="trailing" constant="100" id="awk-Vi-fd4"/>
-                                    <constraint firstItem="qRX-0q-f30" firstAttribute="top" secondItem="we4-9s-QvP" secondAttribute="top" id="bpd-bt-jlN"/>
-                                    <constraint firstItem="qRX-0q-f30" firstAttribute="leading" secondItem="we4-9s-QvP" secondAttribute="leading" id="ujZ-Na-nNK"/>
-                                    <constraint firstItem="qRX-0q-f30" firstAttribute="leading" secondItem="we4-9s-QvP" secondAttribute="leadingMargin" constant="100" id="z4c-iy-gxy"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="BzG-4o-qV9"/>
                                         <exclude reference="GC9-fl-WX3"/>
-                                        <exclude reference="Vnc-EW-fQM"/>
-                                        <exclude reference="YfF-yl-I1I"/>
-                                        <exclude reference="bpd-bt-jlN"/>
-                                        <exclude reference="ujZ-Na-nNK"/>
+                                        <exclude reference="J2U-xI-7I6"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="tY4-ah-4My" id="1g6-9p-SeC"/>
+                                </connections>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.84435032290000001" blue="0.98648021409999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="we4-9s-QvP" secondAttribute="trailing" id="Du3-cv-Qh6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="we4-9s-QvP" secondAttribute="trailing" constant="20" id="JrF-A8-sQH"/>
@@ -287,6 +274,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="scrollView" destination="we4-9s-QvP" id="zen-KC-MVi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ji-uf-ASm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -348,4 +338,7 @@
             <point key="canvasLocation" x="324" y="542"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="hedgehogChocolate.jpg" width="1024" height="768"/>
+    </resources>
 </document>
