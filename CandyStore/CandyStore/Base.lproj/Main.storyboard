@@ -34,7 +34,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="CandyCell" id="jY0-vE-vqX">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="CandyCell" id="jY0-vE-vqX" customClass="UICandyTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jY0-vE-vqX" id="nzF-RQ-wE8">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -45,7 +45,7 @@
                                             <color key="textColor" red="0.89157562359999998" green="0.41494271560000001" blue="0.91416864809999998" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T5b-ZM-05v">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hedgehogChocolate.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="T5b-ZM-05v">
                                             <rect key="frame" x="0.0" y="0.0" width="230" height="99"/>
                                             <color key="backgroundColor" red="0.91032082759999999" green="0.97616084250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
@@ -71,6 +71,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="0.84435032290000001" blue="0.98648021409999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
+                                    <outlet property="candyThumbnail" destination="T5b-ZM-05v" id="Lna-bU-nPf"/>
                                     <segue destination="LmP-eo-1gk" kind="show" id="BnS-kM-g2n"/>
                                 </connections>
                             </tableViewCell>
@@ -214,7 +215,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="400" placeholderIntrinsicHeight="400" translatesAutoresizingMaskIntoConstraints="NO" id="we4-9s-QvP">
-                                <rect key="frame" x="36" y="84" width="528" height="496"/>
+                                <rect key="frame" x="-4" y="64" width="608" height="536"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="496" id="BzG-4o-qV9"/>
                                     <constraint firstAttribute="width" constant="200" id="GC9-fl-WX3"/>
@@ -235,13 +236,13 @@
                         <color key="backgroundColor" red="1" green="0.84435032290000001" blue="0.98648021409999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="we4-9s-QvP" secondAttribute="trailing" id="Du3-cv-Qh6"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="we4-9s-QvP" secondAttribute="trailing" constant="20" id="JrF-A8-sQH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="we4-9s-QvP" secondAttribute="trailing" constant="-20" id="JrF-A8-sQH"/>
                             <constraint firstItem="we4-9s-QvP" firstAttribute="leading" secondItem="7kB-TC-iKy" secondAttribute="leading" id="MyD-Ha-AlW"/>
                             <constraint firstItem="we4-9s-QvP" firstAttribute="top" secondItem="bRN-hA-Cvb" secondAttribute="bottom" id="Sgt-qU-Sph"/>
-                            <constraint firstItem="w5S-cX-PiW" firstAttribute="top" secondItem="we4-9s-QvP" secondAttribute="bottom" constant="20" id="UgZ-Pi-zYh"/>
-                            <constraint firstItem="we4-9s-QvP" firstAttribute="top" secondItem="bRN-hA-Cvb" secondAttribute="bottom" constant="20" id="fWl-l9-Oj1"/>
+                            <constraint firstItem="w5S-cX-PiW" firstAttribute="top" secondItem="we4-9s-QvP" secondAttribute="bottom" id="UgZ-Pi-zYh"/>
+                            <constraint firstItem="we4-9s-QvP" firstAttribute="top" secondItem="bRN-hA-Cvb" secondAttribute="bottom" id="fWl-l9-Oj1"/>
                             <constraint firstItem="w5S-cX-PiW" firstAttribute="top" secondItem="we4-9s-QvP" secondAttribute="bottom" id="ueY-yy-O6i"/>
-                            <constraint firstItem="we4-9s-QvP" firstAttribute="leading" secondItem="7kB-TC-iKy" secondAttribute="leadingMargin" constant="20" id="x9M-H2-bUd"/>
+                            <constraint firstItem="we4-9s-QvP" firstAttribute="leading" secondItem="7kB-TC-iKy" secondAttribute="leadingMargin" constant="-20" id="x9M-H2-bUd"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -273,21 +274,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="i0f-lW-Jeg">
-                                <rect key="frame" x="24" y="24" width="552" height="552"/>
+                                <rect key="frame" x="-4" y="0.0" width="608" height="600"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="i0f-lW-Jeg" secondAttribute="height" multiplier="1:1" id="Rak-zw-f82"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Rak-zw-f82"/>
+                                    </mask>
+                                </variation>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="i0f-lW-Jeg" secondAttribute="centerY" id="Ekg-BX-01B"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="i0f-lW-Jeg" secondAttribute="trailing" constant="-20" id="HBR-Km-JtB"/>
+                            <constraint firstItem="F2S-Fn-O2y" firstAttribute="top" secondItem="i0f-lW-Jeg" secondAttribute="bottom" id="Ibo-PK-xcU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="i0f-lW-Jeg" secondAttribute="trailing" constant="8" id="aQq-Oo-CbQ"/>
                             <constraint firstItem="i0f-lW-Jeg" firstAttribute="leading" secondItem="6zb-Fo-6TP" secondAttribute="leadingMargin" constant="8" id="d93-PV-UIh"/>
                             <constraint firstAttribute="centerX" secondItem="i0f-lW-Jeg" secondAttribute="centerX" id="f4C-mL-7My"/>
+                            <constraint firstItem="i0f-lW-Jeg" firstAttribute="leading" secondItem="6zb-Fo-6TP" secondAttribute="leadingMargin" constant="-20" id="nbq-jq-JVe"/>
+                            <constraint firstItem="i0f-lW-Jeg" firstAttribute="top" secondItem="6zb-Fo-6TP" secondAttribute="topMargin" id="vWV-OG-Ypm"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="Ekg-BX-01B"/>
+                                <exclude reference="aQq-Oo-CbQ"/>
+                                <exclude reference="d93-PV-UIh"/>
                                 <exclude reference="f4C-mL-7My"/>
                             </mask>
                         </variation>
