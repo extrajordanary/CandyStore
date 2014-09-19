@@ -55,6 +55,8 @@
     twoFingerTapRecognizer.numberOfTapsRequired = 1;
     twoFingerTapRecognizer.numberOfTouchesRequired = 2;
     [self.scrollView addGestureRecognizer:twoFingerTapRecognizer];
+    
+    [self centerScrollViewContents];
 }
 
 - (void)didReceiveMemoryWarning {
