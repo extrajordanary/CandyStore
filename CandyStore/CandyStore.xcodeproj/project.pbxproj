@@ -193,6 +193,7 @@
 				TargetAttributes = {
 					17AD79BE19C8F171005F3FF3 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = KRSTNFA75G;
 					};
 					17AD79DA19C8F172005F3FF3 = {
 						CreatedOnToolsVersion = 6.0;
