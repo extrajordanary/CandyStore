@@ -8,7 +8,7 @@
 
 #import "CandyListTableViewController.h"
 #import "AppDelegate.h"
-#import "Candy.h"
+//#import "Candy.h"
 
 @interface CandyListTableViewController ()
 
@@ -107,7 +107,6 @@
     if (array.count == 0) {
         [self createOneCandy:context];
         array = [context executeFetchRequest:request error:&error];
-//        [self updateCandyObjectsArray];
     }
     
     self.candyObjects = array;
@@ -116,6 +115,10 @@
 - (void) createOneCandy:(NSManagedObjectContext*)context {
     
 //    Candy *newCandy = [NSEntityDescription insertNewObjectForEntityForName:@"Candy" inManagedObjectContext:context];
+//    newCandy.name = @"Tasty tasty test candy";
+//    newCandy.picturePath = @"hedgehogChocolate.jpg";
+//    newCandy.locationLat = [NSNumber numberWithInt:1];
+//    newCandy.locationLon = [NSNumber numberWithInt:2];
 
     NSManagedObject *newCandy = [NSEntityDescription insertNewObjectForEntityForName:@"Candy" inManagedObjectContext:context];
     
@@ -123,10 +126,6 @@
     [newCandy setValue:@"hedgehogChocolate.jpg" forKey:@"picturePath"];
     [newCandy setValue:[NSNumber numberWithInt:1] forKey:@"locationLat"];
     [newCandy setValue:[NSNumber numberWithInt:2] forKey:@"locationLon"];
-    
-//    newCandy.name = @"Tasty tasty test candy";
-//    newCandy.picturePath = @"hedgehogChocolate.jpg";
-//    // add default location
     
     // create error to pass to the save method
     NSError *error = nil;
