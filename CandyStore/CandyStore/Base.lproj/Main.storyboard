@@ -71,6 +71,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="0.84435032290000001" blue="0.98648021409999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
+                                    <outlet property="candyName" destination="Tpy-FQ-Ymd" id="cVm-3U-S30"/>
                                     <outlet property="candyThumbnail" destination="T5b-ZM-05v" id="Lna-bU-nPf"/>
                                     <segue destination="LmP-eo-1gk" kind="show" id="BnS-kM-g2n"/>
                                 </connections>

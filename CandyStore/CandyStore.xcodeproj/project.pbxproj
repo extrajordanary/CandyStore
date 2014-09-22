@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1711B9C019D0B01D00F00306 /* Candy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1711B9BF19D0B01D00F00306 /* Candy.m */; };
 		1712B3F619CA526E00290C44 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1712B3F519CA526E00290C44 /* MapKit.framework */; };
 		1712B3F919CA597400290C44 /* CandyPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1712B3F819CA597400290C44 /* CandyPictureViewController.m */; };
 		1781DEB819CCBF0400EEEECB /* hedgehogChocolate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1781DEB719CCBF0400EEEECB /* hedgehogChocolate.jpg */; };
@@ -33,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1711B9BE19D0B01D00F00306 /* Candy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Candy.h; sourceTree = "<group>"; };
+		1711B9BF19D0B01D00F00306 /* Candy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Candy.m; sourceTree = "<group>"; };
 		1712B3F519CA526E00290C44 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		1712B3F719CA597300290C44 /* CandyPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CandyPictureViewController.h; sourceTree = "<group>"; };
 		1712B3F819CA597400290C44 /* CandyPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CandyPictureViewController.m; sourceTree = "<group>"; };
@@ -112,6 +115,8 @@
 				17AD79D219C8F171005F3FF3 /* Images.xcassets */,
 				17AD79D419C8F172005F3FF3 /* LaunchScreen.xib */,
 				17AD79C919C8F171005F3FF3 /* CandyStore.xcdatamodeld */,
+				1711B9BE19D0B01D00F00306 /* Candy.h */,
+				1711B9BF19D0B01D00F00306 /* Candy.m */,
 				17AD79C219C8F171005F3FF3 /* Supporting Files */,
 			);
 			path = CandyStore;
@@ -247,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1781DEC119CCD8CC00EEEECB /* UICandyTableViewCell.m in Sources */,
+				1711B9C019D0B01D00F00306 /* Candy.m in Sources */,
 				17AD79CB19C8F171005F3FF3 /* CandyStore.xcdatamodeld in Sources */,
 				1781DEBE19CCD08D00EEEECB /* CandyDetailsViewController.m in Sources */,
 				17AD79C819C8F171005F3FF3 /* AppDelegate.m in Sources */,

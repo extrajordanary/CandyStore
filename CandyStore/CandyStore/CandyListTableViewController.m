@@ -7,6 +7,7 @@
 //
 
 #import "CandyListTableViewController.h"
+#include "AppDelegate.h"
 
 @interface CandyListTableViewController ()
 
@@ -17,11 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // add each of the candy objects to self.candyObjects array
+    [self updateCandyObjectsArray];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,6 +39,8 @@
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return 5;
+    
+    // get number of Candy Objects
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -54,57 +54,78 @@
 }
 
 /*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
 }
 */
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+ 
+    // which row was selected
+    // which Candy object needs to be passed to next view
 }
-*/
+
+#pragma mark - Candy Objects
+
+- (void) updateCandyObjectsArray {
+
+    // get access to the managed object context
+    NSManagedObjectContext *context = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
+    
+    // get entity description for entity we are selecting
+    NSEntityDescription *entityDescription = [NSEntityDescription
+                                              entityForName:@"Candy" inManagedObjectContext:context];
+    // create a new fetch request
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDescription];
+    
+//    // OPTIONAL: apply a filter by creating a predicate and adding it to the request
+//    NSNumber *minimumAge = @(20);
+//    NSPredicate *predicate = [NSPredicate predicateWithFormat:
+//                              @"age > %@)", minimumAge];
+//    [request setPredicate:predicate];
+    
+//    // OPTIONAL: create a sort rule and add it to the request
+//    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]
+//                                        initWithKey:@"age" ascending:YES];
+//    [request setSortDescriptors:@[sortDescriptor]];
+    
+    // create an error variable to pass to the execute method
+    NSError *error;
+    
+    // retrieve results
+    NSArray *array = [context executeFetchRequest:request error:&error]; 
+    if (array == nil) { 
+        //error handling, e.g. display err
+        [self createOneCandy:context];
+        [self updateCandyObjectsArray];
+    }
+    
+    self.candyObjects = array;
+}
+
+- (void) createOneCandy:(NSManagedObjectContext*)context {
+    Candy *newCandy = [NSEntityDescription insertNewObjectForEntityForName:@"Candy" inManagedObjectContext:context];
+    
+    newCandy.name = @"Tasty tasty test candy";
+    
+    // add default pic
+    // add default location
+    
+    // create error to pass to the save method
+    NSError *error = nil;
+    
+    // attempt to save the context to persist changes
+    [context save:&error];
+    
+    if (error) {
+        // error handling
+    }
+}
 
 @end

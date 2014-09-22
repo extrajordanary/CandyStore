@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#include "Candy.h"
 
 @interface CandyListTableViewController : UITableViewController
+
+@property (strong, nonatomic) NSArray *candyObjects;
 
 @end

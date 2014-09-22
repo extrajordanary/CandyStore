@@ -12,4 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *candyThumbnail;
 
+@property (weak, nonatomic) IBOutlet UILabel *candyName;
+
 @end
