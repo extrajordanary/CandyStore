@@ -101,6 +101,8 @@
 		17AD79C119C8F171005F3FF3 /* CandyStore */ = {
 			isa = PBXGroup;
 			children = (
+				1711B9BE19D0B01D00F00306 /* Candy.h */,
+				1711B9BF19D0B01D00F00306 /* Candy.m */,
 				1781DEBC19CCD08D00EEEECB /* CandyDetailsViewController.h */,
 				1781DEBD19CCD08D00EEEECB /* CandyDetailsViewController.m */,
 				1712B3F719CA597300290C44 /* CandyPictureViewController.h */,
@@ -115,8 +117,6 @@
 				17AD79D219C8F171005F3FF3 /* Images.xcassets */,
 				17AD79D419C8F172005F3FF3 /* LaunchScreen.xib */,
 				17AD79C919C8F171005F3FF3 /* CandyStore.xcdatamodeld */,
-				1711B9BE19D0B01D00F00306 /* Candy.h */,
-				1711B9BF19D0B01D00F00306 /* Candy.m */,
 				17AD79C219C8F171005F3FF3 /* Supporting Files */,
 			);
 			path = CandyStore;

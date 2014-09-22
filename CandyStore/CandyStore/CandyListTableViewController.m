@@ -7,7 +7,8 @@
 //
 
 #import "CandyListTableViewController.h"
-#include "AppDelegate.h"
+#import "AppDelegate.h"
+#import "Candy.h"
 
 @interface CandyListTableViewController ()
 
@@ -102,20 +103,30 @@
     NSArray *array = [context executeFetchRequest:request error:&error]; 
     if (array == nil) { 
         //error handling, e.g. display err
+    }
+    if (array.count == 0) {
         [self createOneCandy:context];
-        [self updateCandyObjectsArray];
+        array = [context executeFetchRequest:request error:&error];
+//        [self updateCandyObjectsArray];
     }
     
     self.candyObjects = array;
 }
 
 - (void) createOneCandy:(NSManagedObjectContext*)context {
-    Candy *newCandy = [NSEntityDescription insertNewObjectForEntityForName:@"Candy" inManagedObjectContext:context];
     
-    newCandy.name = @"Tasty tasty test candy";
+//    Candy *newCandy = [NSEntityDescription insertNewObjectForEntityForName:@"Candy" inManagedObjectContext:context];
+
+    NSManagedObject *newCandy = [NSEntityDescription insertNewObjectForEntityForName:@"Candy" inManagedObjectContext:context];
     
-    // add default pic
-    // add default location
+    [newCandy setValue:@"Tasty tasty test candy" forKey:@"name"];
+    [newCandy setValue:@"hedgehogChocolate.jpg" forKey:@"picturePath"];
+    [newCandy setValue:[NSNumber numberWithInt:1] forKey:@"locationLat"];
+    [newCandy setValue:[NSNumber numberWithInt:2] forKey:@"locationLon"];
+    
+//    newCandy.name = @"Tasty tasty test candy";
+//    newCandy.picturePath = @"hedgehogChocolate.jpg";
+//    // add default location
     
     // create error to pass to the save method
     NSError *error = nil;

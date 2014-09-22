@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#include "Candy.h"
 
 @interface CandyListTableViewController : UITableViewController
 
