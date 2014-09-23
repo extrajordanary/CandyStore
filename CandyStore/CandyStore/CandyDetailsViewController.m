@@ -34,7 +34,6 @@
 }
 
 - (void) viewWillAppear:(BOOL)animated {
-//    Candy *nextCandy = self.candyObjects[indexPath.row];
     [self.candyName setText:self.candy.name];
     
     UIImage *picture = [UIImage imageNamed:self.candy.picturePath];

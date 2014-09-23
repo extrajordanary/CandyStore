@@ -24,6 +24,4 @@
 
 @property (nonatomic, strong) Candy *candy;
 
-- (IBAction)coords:(id)sender;
-
 @end

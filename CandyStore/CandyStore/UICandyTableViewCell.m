@@ -14,7 +14,6 @@
     // Initialization code
     
     [self.candyThumbnail setClipsToBounds:YES];
-
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

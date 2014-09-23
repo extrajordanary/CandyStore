@@ -42,6 +42,8 @@
     return _theCoordinate;
 }
 
+/* 
+//This is for if I want to send the annotation item to the Maps App
 - (MKMapItem*)mapItem {
     NSDictionary *addressDict = @{(NSString*)kABPersonAddressStreetKey : _address};
     
@@ -54,5 +56,6 @@
     
     return mapItem;
 }
+*/
 
 @end

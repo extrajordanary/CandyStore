@@ -13,8 +13,6 @@
 @property double userLat;
 @property double userLon;
 
-//@property CLLocationCoordinate2D candyLocation;
-
 @end
 
 #define METERS_PER_MILE 1609.344
@@ -31,16 +29,12 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    // 1
     self.candyLocation = CLLocationCoordinate2DMake([self.candy.locationLat doubleValue], [self.candy.locationLon doubleValue]);
 
-    NSLog(@"  %f ,  %f",self.candyLocation.latitude,self.candyLocation.longitude);
+//    NSLog(@"  %f ,  %f",self.candyLocation.latitude,self.candyLocation.longitude);
 
-    
-    // 2
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(self.candyLocation, 3*METERS_PER_MILE, 3*METERS_PER_MILE);
     
-    // 3
     [self.candyMap setRegion:viewRegion animated:YES];
     
     [self plotCandyPosition];
@@ -77,8 +71,10 @@
      didUpdateLocations:(NSArray *)locations {
     // If it's a relatively recent event, turn off updates to save power.
     CLLocation* location = [locations lastObject];
+    
 //    NSDate* eventDate = location.timestamp;
 //    NSTimeInterval howRecent = [eventDate timeIntervalSinceNow];
+    
 //    if (abs(howRecent) < 15.0) {
     self.userLat = location.coordinate.latitude;
     self.userLon = location.coordinate.longitude;
@@ -99,20 +95,14 @@
     self.userLon = self.locationManager.location.coordinate.longitude;
     
     NSLog(@"%f , %f",self.userLat,self.userLon);
-
 }
 
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//     //Get the new view controller using [segue destinationViewController].
+//     //Pass the selected object to the new view controller.
+//}
 
-
-
-- (IBAction)coords:(id)sender {
-    [self printUserCoords];
-}
 @end

@@ -33,6 +33,7 @@
 
 #pragma mark - Table view data source
 
+// Not using sections
 //- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 //#warning Potentially incomplete method implementation.
 //    // Return the number of sections.
@@ -40,13 +41,9 @@
 //}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//#warning Incomplete method implementation.
     // get number of Candy Objects
     [self updateCandyObjectsArray];
-    
     int numRows = (int)[self.candyObjects count];
-//    NSLog(@"%i",numRows);
-    
     return numRows;
 }
 
@@ -100,16 +97,18 @@
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:entityDescription];
     
-//    // OPTIONAL: apply a filter by creating a predicate and adding it to the request
-//    NSNumber *minimumAge = @(20);
-//    NSPredicate *predicate = [NSPredicate predicateWithFormat:
-//                              @"age > %@)", minimumAge];
-//    [request setPredicate:predicate];
+    /*
+    // OPTIONAL: apply a filter by creating a predicate and adding it to the request
+    NSNumber *minimumAge = @(20);
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:
+                              @"age > %@)", minimumAge];
+    [request setPredicate:predicate];
     
-//    // OPTIONAL: create a sort rule and add it to the request
-//    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]
-//                                        initWithKey:@"age" ascending:YES];
-//    [request setSortDescriptors:@[sortDescriptor]];
+    // OPTIONAL: create a sort rule and add it to the request
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]
+                                        initWithKey:@"age" ascending:YES];
+    [request setSortDescriptors:@[sortDescriptor]];
+    */
     
     // create an error variable to pass to the execute method
     NSError *error;
@@ -138,6 +137,8 @@
 
         newCandy.name = newName;
         newCandy.picturePath = newPic;
+        
+        // semi-random location jittered from office location
         double rand1 = ((double)arc4random_uniform(20)/1000)-.01;
         double rand2 = ((double)arc4random_uniform(20)/1000)-.01;
         newCandy.locationLat = [NSNumber numberWithDouble:37.777899+rand1];

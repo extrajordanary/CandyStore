@@ -286,23 +286,9 @@
                                     </mask>
                                 </variation>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="smQ-0x-R5q">
-                                <rect key="frame" x="36" y="104" width="107" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="107" id="O5z-iR-eRt"/>
-                                    <constraint firstAttribute="height" constant="30" id="nLp-J1-Zam"/>
-                                </constraints>
-                                <state key="normal" title="Coords">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="coords:" destination="qUq-QL-x4E" eventType="touchDown" id="TrN-VB-Wml"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="smQ-0x-R5q" firstAttribute="top" secondItem="pJy-1m-utn" secondAttribute="bottom" constant="40" id="7oV-Ur-Iwo"/>
                             <constraint firstAttribute="centerY" secondItem="i0f-lW-Jeg" secondAttribute="centerY" id="Ekg-BX-01B"/>
                             <constraint firstAttribute="trailingMargin" secondItem="i0f-lW-Jeg" secondAttribute="trailing" constant="-20" id="HBR-Km-JtB"/>
                             <constraint firstItem="F2S-Fn-O2y" firstAttribute="top" secondItem="i0f-lW-Jeg" secondAttribute="bottom" id="Ibo-PK-xcU"/>
@@ -310,7 +296,6 @@
                             <constraint firstItem="i0f-lW-Jeg" firstAttribute="leading" secondItem="6zb-Fo-6TP" secondAttribute="leadingMargin" constant="8" id="d93-PV-UIh"/>
                             <constraint firstAttribute="centerX" secondItem="i0f-lW-Jeg" secondAttribute="centerX" id="f4C-mL-7My"/>
                             <constraint firstItem="i0f-lW-Jeg" firstAttribute="leading" secondItem="6zb-Fo-6TP" secondAttribute="leadingMargin" constant="-20" id="nbq-jq-JVe"/>
-                            <constraint firstItem="smQ-0x-R5q" firstAttribute="leading" secondItem="6zb-Fo-6TP" secondAttribute="leadingMargin" constant="20" id="rwd-mK-LEb"/>
                             <constraint firstItem="i0f-lW-Jeg" firstAttribute="top" secondItem="6zb-Fo-6TP" secondAttribute="topMargin" id="vWV-OG-Ypm"/>
                         </constraints>
                         <variation key="default">
