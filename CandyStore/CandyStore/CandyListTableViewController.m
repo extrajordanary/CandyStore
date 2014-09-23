@@ -11,6 +11,7 @@
 #import "Candy.h"
 #import "UICandyTableViewCell.h"
 #import "CandyDetailsViewController.h"
+#include <stdlib.h>
 
 @interface CandyListTableViewController ()
 
@@ -141,8 +142,10 @@
 
         newCandy.name = newName;
         newCandy.picturePath = newPic;
-        newCandy.locationLat = [NSNumber numberWithInt:1];
-        newCandy.locationLon = [NSNumber numberWithInt:2];
+        long rand1 = arc4random_uniform(10);
+        long rand2 = arc4random_uniform(10);
+        newCandy.locationLat = [NSNumber numberWithLong:37272500+rand1];
+        newCandy.locationLon = [NSNumber numberWithLong:-122196900+rand2];
     }
 
 
