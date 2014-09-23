@@ -26,6 +26,7 @@
 		17D7458019D0F8C7003AF0F0 /* testCandy2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 17D7457B19D0F8C7003AF0F0 /* testCandy2.jpg */; };
 		17D7458119D0F8C7003AF0F0 /* testCandy1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 17D7457C19D0F8C7003AF0F0 /* testCandy1.jpg */; };
 		17D7458219D0F8C7003AF0F0 /* testCandy0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 17D7457D19D0F8C7003AF0F0 /* testCandy0.jpg */; };
+		17D745B719D1F277003AF0F0 /* CandyMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D745B619D1F277003AF0F0 /* CandyMapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		17D7457B19D0F8C7003AF0F0 /* testCandy2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testCandy2.jpg; sourceTree = "<group>"; };
 		17D7457C19D0F8C7003AF0F0 /* testCandy1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testCandy1.jpg; sourceTree = "<group>"; };
 		17D7457D19D0F8C7003AF0F0 /* testCandy0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testCandy0.jpg; sourceTree = "<group>"; };
+		17D745B519D1F277003AF0F0 /* CandyMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CandyMapViewController.h; sourceTree = "<group>"; };
+		17D745B619D1F277003AF0F0 /* CandyMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CandyMapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,8 @@
 				1781DEC019CCD8CC00EEEECB /* UICandyTableViewCell.m */,
 				1781DEBC19CCD08D00EEEECB /* CandyDetailsViewController.h */,
 				1781DEBD19CCD08D00EEEECB /* CandyDetailsViewController.m */,
+				17D745B519D1F277003AF0F0 /* CandyMapViewController.h */,
+				17D745B619D1F277003AF0F0 /* CandyMapViewController.m */,
 				1712B3F719CA597300290C44 /* CandyPictureViewController.h */,
 				1712B3F819CA597400290C44 /* CandyPictureViewController.m */,
 				17AD79CF19C8F171005F3FF3 /* Main.storyboard */,
@@ -271,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17D745B719D1F277003AF0F0 /* CandyMapViewController.m in Sources */,
 				1781DEC119CCD8CC00EEEECB /* UICandyTableViewCell.m in Sources */,
 				17AD79CB19C8F171005F3FF3 /* CandyStore.xcdatamodeld in Sources */,
 				1781DEBE19CCD08D00EEEECB /* CandyDetailsViewController.m in Sources */,

@@ -266,7 +266,7 @@
         <!--Where to Buy-->
         <scene sceneID="Jwo-Uw-uBO">
             <objects>
-                <viewController title="Where to Buy" id="qUq-QL-x4E" sceneMemberID="viewController">
+                <viewController title="Where to Buy" id="qUq-QL-x4E" customClass="CandyMapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pJy-1m-utn"/>
                         <viewControllerLayoutGuide type="bottom" id="F2S-Fn-O2y"/>
@@ -307,10 +307,13 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="candyMap" destination="i0f-lW-Jeg" id="b4y-O0-dib"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="doa-Ig-gO9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2804" y="948"/>
+            <point key="canvasLocation" x="2799" y="668"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Lsw-Xv-UGQ">
