@@ -73,7 +73,7 @@
 
 - (void) printUserCoords {
     self.userLat = self.locationManager.location.coordinate.latitude;
-    self.userLon = self.locationManager.location.coordinate.latitude;
+    self.userLon = self.locationManager.location.coordinate.longitude;
     
     NSLog(@"%f , %f",self.userLat,self.userLon);
 
