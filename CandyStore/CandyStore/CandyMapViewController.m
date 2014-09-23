@@ -13,7 +13,7 @@
 @property double userLat;
 @property double userLon;
 
-@property CLLocationCoordinate2D *candyLocation;
+//@property CLLocationCoordinate2D candyLocation;
 
 @end
 
@@ -32,21 +32,18 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     // 1
-    CLLocationCoordinate2D zoomLocation;
-    zoomLocation.latitude = [self.candy.locationLat longValue];
-    zoomLocation.longitude= [self.candy.locationLon longValue];
-    NSLog(@"  %f ,  %f",zoomLocation.latitude,zoomLocation.longitude);
+    self.candyLocation = CLLocationCoordinate2DMake([self.candy.locationLat doubleValue], [self.candy.locationLon doubleValue]);
+
+    NSLog(@"  %f ,  %f",self.candyLocation.latitude,self.candyLocation.longitude);
 
     
     // 2
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 1000*METERS_PER_MILE, 1000*METERS_PER_MILE);
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(self.candyLocation, 3*METERS_PER_MILE, 3*METERS_PER_MILE);
     
     // 3
     [self.candyMap setRegion:viewRegion animated:YES];
     
-//    self.candyLocation = [CLLocationCoordinate2DMake([self.candy.locationLat longValue], [self.candy.locationLon longValue])];
-//    
-//    MKAnnotationView *candyMapLabel = [[MKAnnotationView alloc] initWithAnnotation:MKPinAnnotationColorPurple reuseIdentifier:self.candy.name];
+    [self plotCandyPosition];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,7 +51,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Core Location
+#pragma mark - Locations
 
 - (void)startStandardUpdates
 {
@@ -73,8 +70,6 @@
     [self.locationManager requestAlwaysAuthorization];
 
     [self.locationManager startUpdatingLocation];
-    
-    [self printUserCoords];
 }
 
 // Delegate method from the CLLocationManagerDelegate protocol.
@@ -92,6 +87,11 @@
               location.coordinate.latitude,
               location.coordinate.longitude);
 //    }
+}
+
+- (void) plotCandyPosition {
+    CandyLocation *candyLocation = [[CandyLocation alloc] initWithName:self.candy.name address:@"addy" coordinate:self.candyLocation];
+    [self.candyMap addAnnotation:candyLocation];
 }
 
 - (void) printUserCoords {

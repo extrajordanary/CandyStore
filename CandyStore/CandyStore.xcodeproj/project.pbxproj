@@ -21,6 +21,8 @@
 		17AD79E219C8F172005F3FF3 /* CandyStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17AD79E119C8F172005F3FF3 /* CandyStoreTests.m */; };
 		17AD79ED19C9022F005F3FF3 /* CandyListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17AD79EC19C9022F005F3FF3 /* CandyListTableViewController.m */; };
 		17B5D90019D1FDED003D08A7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B5D8FF19D1FDED003D08A7 /* CoreLocation.framework */; };
+		17B5D90319D21CDC003D08A7 /* CandyLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5D90219D21CDC003D08A7 /* CandyLocation.m */; };
+		17B5D90519D22041003D08A7 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B5D90419D22041003D08A7 /* AddressBook.framework */; };
 		17D7457819D0EF7C003AF0F0 /* Candy.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D7457719D0EF7C003AF0F0 /* Candy.m */; };
 		17D7457E19D0F8C7003AF0F0 /* testCandy4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 17D7457919D0F8C7003AF0F0 /* testCandy4.jpg */; };
 		17D7457F19D0F8C7003AF0F0 /* testCandy3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 17D7457A19D0F8C7003AF0F0 /* testCandy3.jpg */; };
@@ -64,6 +66,9 @@
 		17AD79EB19C9022F005F3FF3 /* CandyListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CandyListTableViewController.h; sourceTree = "<group>"; };
 		17AD79EC19C9022F005F3FF3 /* CandyListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CandyListTableViewController.m; sourceTree = "<group>"; };
 		17B5D8FF19D1FDED003D08A7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		17B5D90119D21CDB003D08A7 /* CandyLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CandyLocation.h; sourceTree = "<group>"; };
+		17B5D90219D21CDC003D08A7 /* CandyLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CandyLocation.m; sourceTree = "<group>"; };
+		17B5D90419D22041003D08A7 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		17D7457619D0EF7C003AF0F0 /* Candy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Candy.h; sourceTree = SOURCE_ROOT; };
 		17D7457719D0EF7C003AF0F0 /* Candy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Candy.m; sourceTree = SOURCE_ROOT; };
 		17D7457919D0F8C7003AF0F0 /* testCandy4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testCandy4.jpg; sourceTree = "<group>"; };
@@ -80,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17B5D90519D22041003D08A7 /* AddressBook.framework in Frameworks */,
 				17B5D90019D1FDED003D08A7 /* CoreLocation.framework in Frameworks */,
 				1712B3F619CA526E00290C44 /* MapKit.framework in Frameworks */,
 			);
@@ -98,6 +104,7 @@
 		17AD79B619C8F171005F3FF3 = {
 			isa = PBXGroup;
 			children = (
+				17B5D90419D22041003D08A7 /* AddressBook.framework */,
 				17B5D8FF19D1FDED003D08A7 /* CoreLocation.framework */,
 				1712B3F519CA526E00290C44 /* MapKit.framework */,
 				17AD79C119C8F171005F3FF3 /* CandyStore */,
@@ -130,6 +137,8 @@
 				1781DEBD19CCD08D00EEEECB /* CandyDetailsViewController.m */,
 				17D745B519D1F277003AF0F0 /* CandyMapViewController.h */,
 				17D745B619D1F277003AF0F0 /* CandyMapViewController.m */,
+				17B5D90119D21CDB003D08A7 /* CandyLocation.h */,
+				17B5D90219D21CDC003D08A7 /* CandyLocation.m */,
 				1712B3F719CA597300290C44 /* CandyPictureViewController.h */,
 				1712B3F819CA597400290C44 /* CandyPictureViewController.m */,
 				17AD79CF19C8F171005F3FF3 /* Main.storyboard */,
@@ -282,6 +291,7 @@
 			files = (
 				17D745B719D1F277003AF0F0 /* CandyMapViewController.m in Sources */,
 				1781DEC119CCD8CC00EEEECB /* UICandyTableViewCell.m in Sources */,
+				17B5D90319D21CDC003D08A7 /* CandyLocation.m in Sources */,
 				17AD79CB19C8F171005F3FF3 /* CandyStore.xcdatamodeld in Sources */,
 				1781DEBE19CCD08D00EEEECB /* CandyDetailsViewController.m in Sources */,
 				17D7457819D0EF7C003AF0F0 /* Candy.m in Sources */,

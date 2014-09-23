@@ -119,10 +119,6 @@
     if (array == nil) { 
         //error handling, e.g. display err
     }
-//    if (array.count == 0) {
-//        [self createOneCandy:context];
-//        array = [context executeFetchRequest:request error:&error];
-//    }
 
     if (array.count == 0) {
         [self createOneCandy:context]; // actually makes 5
@@ -142,19 +138,11 @@
 
         newCandy.name = newName;
         newCandy.picturePath = newPic;
-        long rand1 = arc4random_uniform(20);
-        long rand2 = arc4random_uniform(20);
-        newCandy.locationLat = [NSNumber numberWithDouble:40.272511+rand1-5];
-        newCandy.locationLon = [NSNumber numberWithDouble:-100.196911+rand2-5];
+        double rand1 = ((double)arc4random_uniform(20)/1000)-.01;
+        double rand2 = ((double)arc4random_uniform(20)/1000)-.01;
+        newCandy.locationLat = [NSNumber numberWithDouble:37.777899+rand1];
+        newCandy.locationLon = [NSNumber numberWithDouble:-122.399315+rand2];
     }
-
-
-//    NSManagedObject *newCandy = [NSEntityDescription insertNewObjectForEntityForName:@"Candy" inManagedObjectContext:context];
-//    
-//    [newCandy setValue:@"Tasty tasty test candy" forKey:@"name"];
-//    [newCandy setValue:@"hedgehogChocolate.jpg" forKey:@"picturePath"];
-//    [newCandy setValue:[NSNumber numberWithInt:1] forKey:@"locationLat"];
-//    [newCandy setValue:[NSNumber numberWithInt:2] forKey:@"locationLon"];
     
     // create error to pass to the save method
     NSError *error = nil;

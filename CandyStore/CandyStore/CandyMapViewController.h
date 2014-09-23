@@ -10,6 +10,7 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h> 
 #import "Candy.h"
+#import "CandyLocation.h"
 
 @class Candy;
 
@@ -18,6 +19,8 @@
 @property (strong, nonatomic) IBOutlet MKMapView *candyMap;
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
+
+@property CLLocationCoordinate2D candyLocation;
 
 @property (nonatomic, strong) Candy *candy;
 
