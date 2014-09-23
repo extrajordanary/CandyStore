@@ -37,7 +37,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     // 1
-    UIImage *image = [UIImage imageNamed:@"hedgehogChocolate.jpg"];
+    UIImage *image = [UIImage imageNamed:self.candy.picturePath];
     self.imageView = [[UIImageView alloc] initWithImage:image];
     self.imageView.frame = (CGRect){.origin=CGPointMake(0.0f, 0.0f), .size=image.size};
     [self.scrollView addSubview:self.imageView];

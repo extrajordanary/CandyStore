@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "Candy.h"
 #import "UICandyTableViewCell.h"
+#import "CandyDetailsViewController.h"
 
 @interface CandyListTableViewController ()
 
@@ -43,7 +44,7 @@
     [self updateCandyObjectsArray];
     
     int numRows = (int)[self.candyObjects count];
-    NSLog(@"%i",numRows);
+//    NSLog(@"%i",numRows);
     
     return numRows;
 }
@@ -72,9 +73,16 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
- 
-    // which row was selected
-    // which Candy object needs to be passed to next view
+    
+    if ([segue.identifier isEqualToString:@"viewCandy"]) {
+        CandyDetailsViewController *candyDetailsViewController = [segue destinationViewController];
+        NSIndexPath *selectedIndexPath = self.tableView.indexPathForSelectedRow;
+        candyDetailsViewController.candy = self.candyObjects[selectedIndexPath.row];
+    } else if ([segue.identifier isEqualToString:@"addCandy"]) {
+//        AddCandyViewController *addCandyViewController = [segue destinationViewController];
+//        NSIndexPath *selectedIndexPath = self.tableView.indexPathForSelectedRow;
+//        addCandyViewController.candy = self.candyObjects[selectedIndexPath.row]; // create new empty candy
+    }
 }
 
 #pragma mark - Candy Objects

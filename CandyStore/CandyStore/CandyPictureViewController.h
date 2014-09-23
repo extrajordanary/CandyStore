@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#include "Candy.h"
+
+@class Candy;
 
 @interface CandyPictureViewController : UIViewController
 
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
+
+@property (nonatomic, strong) Candy *candy;
 
 @end

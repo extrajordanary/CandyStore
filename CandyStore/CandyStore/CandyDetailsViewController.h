@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Candy.h"
+
+@class Candy;
 
 @interface CandyDetailsViewController : UIViewController
+
+@property (nonatomic, strong) Candy *candy;
 
 @end

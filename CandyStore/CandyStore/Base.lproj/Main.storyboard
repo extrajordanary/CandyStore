@@ -73,7 +73,7 @@
                                 <connections>
                                     <outlet property="candyName" destination="Tpy-FQ-Ymd" id="cVm-3U-S30"/>
                                     <outlet property="candyThumbnail" destination="T5b-ZM-05v" id="Lna-bU-nPf"/>
-                                    <segue destination="LmP-eo-1gk" kind="show" id="BnS-kM-g2n"/>
+                                    <segue destination="LmP-eo-1gk" kind="show" identifier="viewCandy" id="BnS-kM-g2n"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -86,7 +86,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Chat" id="CdI-Dz-EbG"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="wMx-Pe-yKA">
                             <connections>
-                                <segue destination="vhc-sa-xuH" kind="show" id="DrX-3k-94E"/>
+                                <segue destination="vhc-sa-xuH" kind="show" identifier="addCandy" id="DrX-3k-94E"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -139,7 +139,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="qUq-QL-x4E" kind="show" id="CA4-CF-rwI"/>
+                                    <segue destination="qUq-QL-x4E" kind="show" identifier="viewMap" id="CA4-CF-rwI"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Candy Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eph-F5-7iJ">
@@ -160,7 +160,7 @@
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="tY4-ah-4My" kind="show" id="pxH-yf-rZP"/>
+                                    <segue destination="tY4-ah-4My" kind="show" identifier="viewPic" id="pxH-yf-rZP"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" contentMode="scaleToFill" editable="NO" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PB1-W4-j5i">
@@ -196,6 +196,7 @@
                     </view>
                     <connections>
                         <outlet property="candyImage" destination="Nf7-ig-XQc" id="oHg-yv-Fxo"/>
+                        <outlet property="candyName" destination="eph-F5-7iJ" id="OJE-yR-eZD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XCq-3E-Wds" userLabel="First Responder" sceneMemberID="firstResponder"/>
