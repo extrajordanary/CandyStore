@@ -20,6 +20,7 @@
 		17AD79D619C8F172005F3FF3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17AD79D419C8F172005F3FF3 /* LaunchScreen.xib */; };
 		17AD79E219C8F172005F3FF3 /* CandyStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17AD79E119C8F172005F3FF3 /* CandyStoreTests.m */; };
 		17AD79ED19C9022F005F3FF3 /* CandyListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17AD79EC19C9022F005F3FF3 /* CandyListTableViewController.m */; };
+		17B5D90019D1FDED003D08A7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B5D8FF19D1FDED003D08A7 /* CoreLocation.framework */; };
 		17D7457819D0EF7C003AF0F0 /* Candy.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D7457719D0EF7C003AF0F0 /* Candy.m */; };
 		17D7457E19D0F8C7003AF0F0 /* testCandy4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 17D7457919D0F8C7003AF0F0 /* testCandy4.jpg */; };
 		17D7457F19D0F8C7003AF0F0 /* testCandy3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 17D7457A19D0F8C7003AF0F0 /* testCandy3.jpg */; };
@@ -62,6 +63,7 @@
 		17AD79E119C8F172005F3FF3 /* CandyStoreTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CandyStoreTests.m; sourceTree = "<group>"; };
 		17AD79EB19C9022F005F3FF3 /* CandyListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CandyListTableViewController.h; sourceTree = "<group>"; };
 		17AD79EC19C9022F005F3FF3 /* CandyListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CandyListTableViewController.m; sourceTree = "<group>"; };
+		17B5D8FF19D1FDED003D08A7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		17D7457619D0EF7C003AF0F0 /* Candy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Candy.h; sourceTree = SOURCE_ROOT; };
 		17D7457719D0EF7C003AF0F0 /* Candy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Candy.m; sourceTree = SOURCE_ROOT; };
 		17D7457919D0F8C7003AF0F0 /* testCandy4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testCandy4.jpg; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17B5D90019D1FDED003D08A7 /* CoreLocation.framework in Frameworks */,
 				1712B3F619CA526E00290C44 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,6 +98,7 @@
 		17AD79B619C8F171005F3FF3 = {
 			isa = PBXGroup;
 			children = (
+				17B5D8FF19D1FDED003D08A7 /* CoreLocation.framework */,
 				1712B3F519CA526E00290C44 /* MapKit.framework */,
 				17AD79C119C8F171005F3FF3 /* CandyStore */,
 				17AD79DE19C8F172005F3FF3 /* CandyStoreTests */,

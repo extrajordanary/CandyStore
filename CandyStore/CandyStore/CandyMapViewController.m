@@ -18,12 +18,37 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    
+    [self startStandardUpdates];
+    
     self.candyMap.showsUserLocation = YES;
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Core Location
+
+- (void)startStandardUpdates
+{
+    // Create the location manager if this object does not
+    // already have one.
+    if (nil == self.locationManager) {
+        self.locationManager = [[CLLocationManager alloc] init];
+    }
+    
+    self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
+    
+    // Set a movement threshold for new events.
+    self.locationManager.distanceFilter = 500; // meters
+    
+    [self.locationManager requestAlwaysAuthorization];
+
+    [self.locationManager startUpdatingLocation];
 }
 
 /*
