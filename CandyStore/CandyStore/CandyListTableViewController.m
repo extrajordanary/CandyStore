@@ -8,7 +8,7 @@
 
 #import "CandyListTableViewController.h"
 #import "AppDelegate.h"
-//#import "Candy.h"
+#import "Candy.h"
 
 @interface CandyListTableViewController ()
 
@@ -114,18 +114,18 @@
 
 - (void) createOneCandy:(NSManagedObjectContext*)context {
     
-//    Candy *newCandy = [NSEntityDescription insertNewObjectForEntityForName:@"Candy" inManagedObjectContext:context];
-//    newCandy.name = @"Tasty tasty test candy";
-//    newCandy.picturePath = @"hedgehogChocolate.jpg";
-//    newCandy.locationLat = [NSNumber numberWithInt:1];
-//    newCandy.locationLon = [NSNumber numberWithInt:2];
+    Candy *newCandy = [NSEntityDescription insertNewObjectForEntityForName:@"Candy" inManagedObjectContext:context];
+    newCandy.name = @"Tasty tasty test candy";
+    newCandy.picturePath = @"hedgehogChocolate.jpg";
+    newCandy.locationLat = [NSNumber numberWithInt:1];
+    newCandy.locationLon = [NSNumber numberWithInt:2];
 
-    NSManagedObject *newCandy = [NSEntityDescription insertNewObjectForEntityForName:@"Candy" inManagedObjectContext:context];
-    
-    [newCandy setValue:@"Tasty tasty test candy" forKey:@"name"];
-    [newCandy setValue:@"hedgehogChocolate.jpg" forKey:@"picturePath"];
-    [newCandy setValue:[NSNumber numberWithInt:1] forKey:@"locationLat"];
-    [newCandy setValue:[NSNumber numberWithInt:2] forKey:@"locationLon"];
+//    NSManagedObject *newCandy = [NSEntityDescription insertNewObjectForEntityForName:@"Candy" inManagedObjectContext:context];
+//    
+//    [newCandy setValue:@"Tasty tasty test candy" forKey:@"name"];
+//    [newCandy setValue:@"hedgehogChocolate.jpg" forKey:@"picturePath"];
+//    [newCandy setValue:[NSNumber numberWithInt:1] forKey:@"locationLat"];
+//    [newCandy setValue:[NSNumber numberWithInt:2] forKey:@"locationLon"];
     
     // create error to pass to the save method
     NSError *error = nil;
