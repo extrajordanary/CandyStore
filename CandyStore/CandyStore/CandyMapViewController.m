@@ -13,7 +13,11 @@
 @property double userLat;
 @property double userLon;
 
+@property CLLocationCoordinate2D *candyLocation;
+
 @end
+
+#define METERS_PER_MILE 1609.344
 
 @implementation CandyMapViewController
 
@@ -24,6 +28,25 @@
     [self startStandardUpdates];
     
     self.candyMap.showsUserLocation = YES;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    // 1
+    CLLocationCoordinate2D zoomLocation;
+    zoomLocation.latitude = [self.candy.locationLat longValue];
+    zoomLocation.longitude= [self.candy.locationLon longValue];
+    NSLog(@"  %f ,  %f",zoomLocation.latitude,zoomLocation.longitude);
+
+    
+    // 2
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 1000*METERS_PER_MILE, 1000*METERS_PER_MILE);
+    
+    // 3
+    [self.candyMap setRegion:viewRegion animated:YES];
+    
+//    self.candyLocation = [CLLocationCoordinate2DMake([self.candy.locationLat longValue], [self.candy.locationLon longValue])];
+//    
+//    MKAnnotationView *candyMapLabel = [[MKAnnotationView alloc] initWithAnnotation:MKPinAnnotationColorPurple reuseIdentifier:self.candy.name];
 }
 
 - (void)didReceiveMemoryWarning {

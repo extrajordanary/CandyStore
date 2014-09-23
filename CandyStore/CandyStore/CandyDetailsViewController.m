@@ -8,6 +8,9 @@
 
 #import "CandyDetailsViewController.h"
 #import "CandyPictureViewController.h"
+#import "CandyMapViewController.h"
+
+//@class CandyMapViewController;
 
 @interface CandyDetailsViewController ()
 
@@ -49,7 +52,8 @@
          CandyPictureViewController *candyPictureViewController = [segue destinationViewController];
          candyPictureViewController.candy = self.candy;
      } else if ([segue.identifier isEqualToString:@"viewMap"]) {
-
+         CandyMapViewController *candyMapViewController = [segue destinationViewController];
+         candyMapViewController.candy = self.candy;
      }
  }
 

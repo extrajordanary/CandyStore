@@ -275,8 +275,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="i0f-lW-Jeg">
-                                <rect key="frame" x="-4" y="0.0" width="608" height="600"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="i0f-lW-Jeg">
+                                <rect key="frame" x="-4" y="0.0" width="608" height="556"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="i0f-lW-Jeg" secondAttribute="height" multiplier="1:1" id="Rak-zw-f82"/>
                                 </constraints>

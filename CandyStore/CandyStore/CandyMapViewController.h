@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h> 
+#import "Candy.h"
+
+@class Candy;
 
 @interface CandyMapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 
@@ -16,6 +19,7 @@
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
+@property (nonatomic, strong) Candy *candy;
 
 - (IBAction)coords:(id)sender;
 

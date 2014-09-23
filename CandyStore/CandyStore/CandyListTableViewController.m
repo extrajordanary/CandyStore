@@ -142,10 +142,10 @@
 
         newCandy.name = newName;
         newCandy.picturePath = newPic;
-        long rand1 = arc4random_uniform(10);
-        long rand2 = arc4random_uniform(10);
-        newCandy.locationLat = [NSNumber numberWithDouble:37.272500+rand1];
-        newCandy.locationLon = [NSNumber numberWithDouble:-122.196900+rand2];
+        long rand1 = arc4random_uniform(20);
+        long rand2 = arc4random_uniform(20);
+        newCandy.locationLat = [NSNumber numberWithDouble:40.272511+rand1-5];
+        newCandy.locationLon = [NSNumber numberWithDouble:-100.196911+rand2-5];
     }
 
 
