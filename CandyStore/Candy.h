@@ -15,6 +15,7 @@
 @property (nonatomic, retain) NSNumber * locationLat;
 @property (nonatomic, retain) NSNumber * locationLon;
 @property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * notes;
 @property (nonatomic, retain) NSString * picturePath;
 
 @end

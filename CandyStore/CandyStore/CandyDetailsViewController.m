@@ -16,6 +16,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *candyImage;
 @property (weak, nonatomic) IBOutlet UILabel *candyName;
+@property (weak, nonatomic) IBOutlet UITextView *candyNotes;
 
 @end
 
@@ -38,9 +39,22 @@
     
     UIImage *picture = [UIImage imageNamed:self.candy.picturePath];
     [self.candyImage setImage:picture];
+    
+    [self.candyNotes setText:self.candy.notes];
 }
 
-
+- (void) viewDidDisappear:(BOOL)animated {
+    self.candy.notes = self.candyNotes.text;
+    
+    if (self.candy.hasChanges){
+        NSManagedObjectContext *context = self.candy.managedObjectContext;
+        NSError *error = nil;
+        [context save:&error];
+        if (error) {
+            // error handling
+        }
+    }
+}
 #pragma mark - Navigation
 
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

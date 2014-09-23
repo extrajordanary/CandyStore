@@ -14,6 +14,7 @@
 @dynamic locationLat;
 @dynamic locationLon;
 @dynamic name;
+@dynamic notes;
 @dynamic picturePath;
 
 @end
