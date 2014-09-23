@@ -15,4 +15,8 @@
 @property (strong, nonatomic) IBOutlet MKMapView *candyMap;
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
+
+
+- (IBAction)coords:(id)sender;
+
 @end

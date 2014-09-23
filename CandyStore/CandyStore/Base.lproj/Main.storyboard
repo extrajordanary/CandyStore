@@ -275,7 +275,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="i0f-lW-Jeg">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="i0f-lW-Jeg">
                                 <rect key="frame" x="-4" y="0.0" width="608" height="600"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="i0f-lW-Jeg" secondAttribute="height" multiplier="1:1" id="Rak-zw-f82"/>
@@ -286,9 +286,23 @@
                                     </mask>
                                 </variation>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="smQ-0x-R5q">
+                                <rect key="frame" x="36" y="104" width="107" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="107" id="O5z-iR-eRt"/>
+                                    <constraint firstAttribute="height" constant="30" id="nLp-J1-Zam"/>
+                                </constraints>
+                                <state key="normal" title="Coords">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="coords:" destination="qUq-QL-x4E" eventType="touchDown" id="TrN-VB-Wml"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="smQ-0x-R5q" firstAttribute="top" secondItem="pJy-1m-utn" secondAttribute="bottom" constant="40" id="7oV-Ur-Iwo"/>
                             <constraint firstAttribute="centerY" secondItem="i0f-lW-Jeg" secondAttribute="centerY" id="Ekg-BX-01B"/>
                             <constraint firstAttribute="trailingMargin" secondItem="i0f-lW-Jeg" secondAttribute="trailing" constant="-20" id="HBR-Km-JtB"/>
                             <constraint firstItem="F2S-Fn-O2y" firstAttribute="top" secondItem="i0f-lW-Jeg" secondAttribute="bottom" id="Ibo-PK-xcU"/>
@@ -296,6 +310,7 @@
                             <constraint firstItem="i0f-lW-Jeg" firstAttribute="leading" secondItem="6zb-Fo-6TP" secondAttribute="leadingMargin" constant="8" id="d93-PV-UIh"/>
                             <constraint firstAttribute="centerX" secondItem="i0f-lW-Jeg" secondAttribute="centerX" id="f4C-mL-7My"/>
                             <constraint firstItem="i0f-lW-Jeg" firstAttribute="leading" secondItem="6zb-Fo-6TP" secondAttribute="leadingMargin" constant="-20" id="nbq-jq-JVe"/>
+                            <constraint firstItem="smQ-0x-R5q" firstAttribute="leading" secondItem="6zb-Fo-6TP" secondAttribute="leadingMargin" constant="20" id="rwd-mK-LEb"/>
                             <constraint firstItem="i0f-lW-Jeg" firstAttribute="top" secondItem="6zb-Fo-6TP" secondAttribute="topMargin" id="vWV-OG-Ypm"/>
                         </constraints>
                         <variation key="default">
@@ -307,13 +322,15 @@
                             </mask>
                         </variation>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="candyMap" destination="i0f-lW-Jeg" id="b4y-O0-dib"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="doa-Ig-gO9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2799" y="668"/>
+            <point key="canvasLocation" x="2806" y="864"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Lsw-Xv-UGQ">
