@@ -21,6 +21,11 @@
 		17AD79E219C8F172005F3FF3 /* CandyStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17AD79E119C8F172005F3FF3 /* CandyStoreTests.m */; };
 		17AD79ED19C9022F005F3FF3 /* CandyListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17AD79EC19C9022F005F3FF3 /* CandyListTableViewController.m */; };
 		17D7457819D0EF7C003AF0F0 /* Candy.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D7457719D0EF7C003AF0F0 /* Candy.m */; };
+		17D7457E19D0F8C7003AF0F0 /* testCandy4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 17D7457919D0F8C7003AF0F0 /* testCandy4.jpg */; };
+		17D7457F19D0F8C7003AF0F0 /* testCandy3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 17D7457A19D0F8C7003AF0F0 /* testCandy3.jpg */; };
+		17D7458019D0F8C7003AF0F0 /* testCandy2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 17D7457B19D0F8C7003AF0F0 /* testCandy2.jpg */; };
+		17D7458119D0F8C7003AF0F0 /* testCandy1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 17D7457C19D0F8C7003AF0F0 /* testCandy1.jpg */; };
+		17D7458219D0F8C7003AF0F0 /* testCandy0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 17D7457D19D0F8C7003AF0F0 /* testCandy0.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +63,11 @@
 		17AD79EC19C9022F005F3FF3 /* CandyListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CandyListTableViewController.m; sourceTree = "<group>"; };
 		17D7457619D0EF7C003AF0F0 /* Candy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Candy.h; sourceTree = SOURCE_ROOT; };
 		17D7457719D0EF7C003AF0F0 /* Candy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Candy.m; sourceTree = SOURCE_ROOT; };
+		17D7457919D0F8C7003AF0F0 /* testCandy4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testCandy4.jpg; sourceTree = "<group>"; };
+		17D7457A19D0F8C7003AF0F0 /* testCandy3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testCandy3.jpg; sourceTree = "<group>"; };
+		17D7457B19D0F8C7003AF0F0 /* testCandy2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testCandy2.jpg; sourceTree = "<group>"; };
+		17D7457C19D0F8C7003AF0F0 /* testCandy1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testCandy1.jpg; sourceTree = "<group>"; };
+		17D7457D19D0F8C7003AF0F0 /* testCandy0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testCandy0.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +135,11 @@
 		17AD79C219C8F171005F3FF3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				17D7457919D0F8C7003AF0F0 /* testCandy4.jpg */,
+				17D7457A19D0F8C7003AF0F0 /* testCandy3.jpg */,
+				17D7457B19D0F8C7003AF0F0 /* testCandy2.jpg */,
+				17D7457C19D0F8C7003AF0F0 /* testCandy1.jpg */,
+				17D7457D19D0F8C7003AF0F0 /* testCandy0.jpg */,
 				1781DEB719CCBF0400EEEECB /* hedgehogChocolate.jpg */,
 				17AD79C319C8F171005F3FF3 /* Info.plist */,
 				17AD79C419C8F171005F3FF3 /* main.m */,
@@ -231,8 +246,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				17AD79D119C8F171005F3FF3 /* Main.storyboard in Resources */,
+				17D7458219D0F8C7003AF0F0 /* testCandy0.jpg in Resources */,
+				17D7458019D0F8C7003AF0F0 /* testCandy2.jpg in Resources */,
+				17D7457F19D0F8C7003AF0F0 /* testCandy3.jpg in Resources */,
+				17D7458119D0F8C7003AF0F0 /* testCandy1.jpg in Resources */,
 				1781DEB819CCBF0400EEEECB /* hedgehogChocolate.jpg in Resources */,
 				17AD79D619C8F172005F3FF3 /* LaunchScreen.xib in Resources */,
+				17D7457E19D0F8C7003AF0F0 /* testCandy4.jpg in Resources */,
 				17AD79D319C8F171005F3FF3 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

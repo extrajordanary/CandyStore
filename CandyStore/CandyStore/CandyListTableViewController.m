@@ -9,6 +9,7 @@
 #import "CandyListTableViewController.h"
 #import "AppDelegate.h"
 #import "Candy.h"
+#import "UICandyTableViewCell.h"
 
 @interface CandyListTableViewController ()
 
@@ -38,18 +39,23 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 5;
-    
     // get number of Candy Objects
+    [self updateCandyObjectsArray];
+    
+    int numRows = (int)[self.candyObjects count];
+    NSLog(@"%i",numRows);
+    
+    return numRows;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CandyCell" forIndexPath:indexPath];
+    UICandyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CandyCell" forIndexPath:indexPath];
     
-//    cell.textLabel.text = @"Candy";
+    Candy *nextCandy = self.candyObjects[indexPath.row];
+    [cell.candyName setText:nextCandy.name];
     
-
+    UIImage *picture = [UIImage imageNamed:nextCandy.picturePath];
+    [cell.candyThumbnail setImage:picture];
     
     return cell;
 }
@@ -104,8 +110,13 @@
     if (array == nil) { 
         //error handling, e.g. display err
     }
+//    if (array.count == 0) {
+//        [self createOneCandy:context];
+//        array = [context executeFetchRequest:request error:&error];
+//    }
+
     if (array.count == 0) {
-        [self createOneCandy:context];
+        [self createOneCandy:context]; // actually makes 5
         array = [context executeFetchRequest:request error:&error];
     }
     
@@ -113,12 +124,19 @@
 }
 
 - (void) createOneCandy:(NSManagedObjectContext*)context {
-    
-    Candy *newCandy = [NSEntityDescription insertNewObjectForEntityForName:@"Candy" inManagedObjectContext:context];
-    newCandy.name = @"Tasty tasty test candy";
-    newCandy.picturePath = @"hedgehogChocolate.jpg";
-    newCandy.locationLat = [NSNumber numberWithInt:1];
-    newCandy.locationLon = [NSNumber numberWithInt:2];
+    // actually, create 5 test candies
+    for (int i = 0 ; i < 5; i++) {
+        Candy *newCandy = [NSEntityDescription insertNewObjectForEntityForName:@"Candy" inManagedObjectContext:context];
+        
+        NSString *newName = [NSString stringWithFormat:@"Tasty tasty test candy %i",i];
+        NSString *newPic = [NSString stringWithFormat:@"testCandy%i.jpg",i];
+
+        newCandy.name = newName;
+        newCandy.picturePath = newPic;
+        newCandy.locationLat = [NSNumber numberWithInt:1];
+        newCandy.locationLon = [NSNumber numberWithInt:2];
+    }
+
 
 //    NSManagedObject *newCandy = [NSEntityDescription insertNewObjectForEntityForName:@"Candy" inManagedObjectContext:context];
 //    
