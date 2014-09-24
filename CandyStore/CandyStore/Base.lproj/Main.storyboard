@@ -108,7 +108,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hedgehogChocolate.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Nf7-ig-XQc">
-                                <rect key="frame" x="8" y="120" width="192" height="472"/>
+                                <rect key="frame" x="8" y="120" width="192" height="428"/>
                                 <color key="backgroundColor" red="0.91032082759999999" green="0.97616084250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -123,7 +123,7 @@
                                 </variation>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ex4-Mm-CDu">
-                                <rect key="frame" x="208" y="567" width="384" height="25"/>
+                                <rect key="frame" x="208" y="523" width="384" height="25"/>
                                 <color key="backgroundColor" red="1" green="0.84435032290000001" blue="0.98648021409999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="1vo-Vv-wCV"/>
@@ -142,7 +142,7 @@
                                     <segue destination="qUq-QL-x4E" kind="show" identifier="viewMap" id="CA4-CF-rwI"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Candy Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eph-F5-7iJ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eph-F5-7iJ">
                                 <rect key="frame" x="8" y="72" width="584" height="40"/>
                                 <color key="backgroundColor" red="0.89157562359999998" green="0.41494271560000001" blue="0.91416864809999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -152,8 +152,14 @@
                                 <color key="textColor" red="1" green="0.84435032290000001" blue="0.98648021409999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Candy Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AfK-Co-hhH">
+                                <rect key="frame" x="8" y="72" width="584" height="40"/>
+                                <color key="textColor" red="1" green="0.84435032290000001" blue="0.98648021409999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eIF-Cu-zqI">
-                                <rect key="frame" x="8" y="120" width="192" height="472"/>
+                                <rect key="frame" x="8" y="120" width="192" height="428"/>
                                 <size key="titleShadowOffset" width="1" height="1"/>
                                 <state key="normal" title="Fullscreen">
                                     <color key="titleColor" red="0.89157562359999998" green="0.41494271560000001" blue="0.91416864809999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -164,7 +170,7 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PB1-W4-j5i">
-                                <rect key="frame" x="208" y="120" width="384" height="439"/>
+                                <rect key="frame" x="208" y="120" width="384" height="395"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <mutableString key="text">These are all the reasons why I love this candy: It has sugar. It has pretty colors. It tastes good. It doesn’t stick to my hair (too bad) when I fall asleep cuddling it at night. I try to eat this candy at least 10 times a week because I read on a Yahoo Answers once that it might have some kind of man-made chemical in it that can fight cancer and Lyme disease. I never brush my teeth after eating it so that the chemicals can stay in my mouth and work for even longer. I’m pretty sure it’s working because I don’t have cancer yet!</mutableString>
                                 <color key="textColor" red="0.067663754406141183" green="0.49737424792167068" blue="0.68454908288043481" alpha="1" colorSpace="calibratedRGB"/>
@@ -178,15 +184,19 @@
                             <constraint firstItem="PB1-W4-j5i" firstAttribute="leading" secondItem="Nf7-ig-XQc" secondAttribute="trailing" constant="8" id="5JF-jl-xpR"/>
                             <constraint firstItem="Nf7-ig-XQc" firstAttribute="top" secondItem="eph-F5-7iJ" secondAttribute="bottom" constant="8" id="6BD-Es-TID"/>
                             <constraint firstItem="Ex4-Mm-CDu" firstAttribute="top" secondItem="PB1-W4-j5i" secondAttribute="bottom" constant="8" id="Bp0-hO-TJh"/>
+                            <constraint firstItem="eph-F5-7iJ" firstAttribute="top" secondItem="AfK-Co-hhH" secondAttribute="top" id="Fdp-oH-HNA"/>
                             <constraint firstItem="c3X-nS-Wc9" firstAttribute="top" secondItem="Ex4-Mm-CDu" secondAttribute="bottom" constant="8" id="J59-oR-oRL"/>
                             <constraint firstItem="Nf7-ig-XQc" firstAttribute="centerY" secondItem="eIF-Cu-zqI" secondAttribute="centerY" id="LAo-YC-csf"/>
+                            <constraint firstItem="eph-F5-7iJ" firstAttribute="leading" secondItem="AfK-Co-hhH" secondAttribute="leading" id="Lz9-Wk-Tgt"/>
                             <constraint firstItem="Nf7-ig-XQc" firstAttribute="centerX" secondItem="eIF-Cu-zqI" secondAttribute="centerX" id="NjV-a5-DNv"/>
                             <constraint firstItem="c3X-nS-Wc9" firstAttribute="top" secondItem="Nf7-ig-XQc" secondAttribute="bottom" constant="8" id="OjN-WH-SvX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eph-F5-7iJ" secondAttribute="trailing" constant="-8" id="OlD-HS-1NS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="PB1-W4-j5i" secondAttribute="trailing" constant="-8" id="Pni-Rx-4MJ"/>
                             <constraint firstItem="Nf7-ig-XQc" firstAttribute="leading" secondItem="JFV-Ku-N7R" secondAttribute="leadingMargin" constant="-8" id="Sdj-0C-0bx"/>
+                            <constraint firstItem="eph-F5-7iJ" firstAttribute="trailing" secondItem="AfK-Co-hhH" secondAttribute="trailing" id="Utj-7Q-y2W"/>
                             <constraint firstItem="PB1-W4-j5i" firstAttribute="width" secondItem="Ex4-Mm-CDu" secondAttribute="width" id="Z2k-4u-ZDd"/>
                             <constraint firstItem="eph-F5-7iJ" firstAttribute="top" secondItem="zGj-nY-ThW" secondAttribute="bottom" constant="8" id="gAP-Ws-yGw"/>
+                            <constraint firstItem="eph-F5-7iJ" firstAttribute="bottom" secondItem="AfK-Co-hhH" secondAttribute="bottom" id="haV-2h-csc"/>
                             <constraint firstItem="PB1-W4-j5i" firstAttribute="top" secondItem="eph-F5-7iJ" secondAttribute="bottom" constant="8" id="j3P-hU-ORZ"/>
                             <constraint firstItem="PB1-W4-j5i" firstAttribute="width" secondItem="Nf7-ig-XQc" secondAttribute="width" multiplier="2:1" id="qN7-Bb-ypS"/>
                             <constraint firstItem="Nf7-ig-XQc" firstAttribute="height" secondItem="eIF-Cu-zqI" secondAttribute="height" id="tWh-v4-lcB"/>
@@ -194,9 +204,18 @@
                             <constraint firstItem="PB1-W4-j5i" firstAttribute="centerX" secondItem="Ex4-Mm-CDu" secondAttribute="centerX" id="zBg-LW-iOK"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="ZqV-71-rV6">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="BIp-6H-J3D">
+                            <connections>
+                                <action selector="deleteCandy:" destination="LmP-eo-1gk" id="cY8-05-SIR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="candyImage" destination="Nf7-ig-XQc" id="oHg-yv-Fxo"/>
-                        <outlet property="candyName" destination="eph-F5-7iJ" id="OJE-yR-eZD"/>
+                        <outlet property="candyName" destination="AfK-Co-hhH" id="ola-RF-55V"/>
                         <outlet property="candyNotes" destination="PB1-W4-j5i" id="dtO-9g-BFj"/>
                     </connections>
                 </viewController>
@@ -218,7 +237,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="400" placeholderIntrinsicHeight="400" translatesAutoresizingMaskIntoConstraints="NO" id="we4-9s-QvP">
-                                <rect key="frame" x="-4" y="64" width="608" height="536"/>
+                                <rect key="frame" x="-4" y="64" width="608" height="492"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="496" id="BzG-4o-qV9"/>
                                     <constraint firstAttribute="width" constant="200" id="GC9-fl-WX3"/>

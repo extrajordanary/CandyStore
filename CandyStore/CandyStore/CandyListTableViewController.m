@@ -17,13 +17,24 @@
 
 @end
 
-@implementation CandyListTableViewController
+@implementation CandyListTableViewController {
+    BOOL reloadTable;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
+    // if first time, doesn't need a reload call
+    reloadTable = NO;
+}
+
+- (void) viewWillAppear:(BOOL)animated {
     // add each of the candy objects to self.candyObjects array
     [self updateCandyObjectsArray];
+    
+    if (reloadTable) {
+        [self.tableView reloadData];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,7 +53,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // get number of Candy Objects
-    [self updateCandyObjectsArray];
+//    [self updateCandyObjectsArray];
     int numRows = (int)[self.candyObjects count];
     return numRows;
 }
@@ -55,6 +66,9 @@
     
     UIImage *picture = [UIImage imageNamed:nextCandy.picturePath];
     [cell.candyThumbnail setImage:picture];
+    
+    // reload every other time
+    reloadTable = YES;
     
     return cell;
 }

@@ -15,8 +15,9 @@
 @interface CandyDetailsViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *candyImage;
-@property (weak, nonatomic) IBOutlet UILabel *candyName;
+//@property (weak, nonatomic) IBOutlet UILabel *candyName;
 @property (weak, nonatomic) IBOutlet UITextView *candyNotes;
+@property (weak, nonatomic) IBOutlet UITextField *candyName;
 
 @end
 
@@ -43,8 +44,9 @@
     [self.candyNotes setText:self.candy.notes];
 }
 
-- (void) viewDidDisappear:(BOOL)animated {
+- (void) viewWillDisappear:(BOOL)animated {
     self.candy.notes = self.candyNotes.text;
+    self.candy.name = self.candyName.text;
     
     if (self.candy.hasChanges){ // runs every time but doesnt need to TODO
         NSManagedObjectContext *context = self.candy.managedObjectContext;
@@ -55,6 +57,7 @@
         }
     }
 }
+
 #pragma mark - Navigation
 
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -69,5 +72,8 @@
          candyMapViewController.candy = self.candy;
      }
  }
+
+- (IBAction)deleteCandy:(id)sender {
+}
 
 @end
