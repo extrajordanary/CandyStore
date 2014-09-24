@@ -46,7 +46,7 @@
 - (void) viewDidDisappear:(BOOL)animated {
     self.candy.notes = self.candyNotes.text;
     
-    if (self.candy.hasChanges){
+    if (self.candy.hasChanges){ // runs every time but doesnt need to TODO
         NSManagedObjectContext *context = self.candy.managedObjectContext;
         NSError *error = nil;
         [context save:&error];

@@ -17,7 +17,9 @@
 
 #define METERS_PER_MILE 1609.344
 
-@implementation CandyMapViewController
+@implementation CandyMapViewController {
+    MKPointAnnotation *pressPoint;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,6 +28,16 @@
     [self startStandardUpdates];
     
     self.candyMap.showsUserLocation = YES;
+    
+    // set up long press detection for editing mode
+//    [self.longPressed addTarget:self action:@selector(mapViewLongPressed:)];
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(mapViewLongPressed:)];
+    [longPress setAllowableMovement:10.];
+    [longPress setMinimumPressDuration:.5];
+    [self.candyMap addGestureRecognizer:longPress];
+    
+    pressPoint = [[MKPointAnnotation alloc] init];
+    [pressPoint setTitle:@"New Candy"];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -86,7 +98,7 @@
 }
 
 - (void) plotCandyPosition {
-    CandyLocation *candyLocation = [[CandyLocation alloc] initWithName:self.candy.name address:@"addy" coordinate:self.candyLocation];
+    CandyLocation *candyLocation = [[CandyLocation alloc] initWithName:self.candy.name address:nil coordinate:self.candyLocation];
     [self.candyMap addAnnotation:candyLocation];
 }
 
@@ -95,6 +107,28 @@
     self.userLon = self.locationManager.location.coordinate.longitude;
     
     NSLog(@"%f , %f",self.userLat,self.userLon);
+}
+
+- (void) mapViewLongPressed:(UILongPressGestureRecognizer*)recognizer {
+    [self.candyMap removeAnnotation:pressPoint];
+    
+    CGPoint point = [recognizer locationInView:self.candyMap];
+    
+    CLLocationCoordinate2D tapPoint = [self.candyMap convertPoint:point toCoordinateFromView:self.view];
+    
+//    MKPointAnnotation *point1 = [[MKPointAnnotation alloc] init];
+    
+    pressPoint.coordinate = tapPoint;
+    
+    [self.candyMap addAnnotation:pressPoint];
+    
+    // get touch location
+    
+    // convert touch location to GPS coords
+    
+    // set newCandyLocation to the GPS coords
+    
+    // set new Candy location in Core Data to be newCandyLocation
 }
 
 #pragma mark - Navigation

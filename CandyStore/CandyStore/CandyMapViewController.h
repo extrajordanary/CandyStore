@@ -24,4 +24,6 @@
 
 @property (nonatomic, strong) Candy *candy;
 
+//@property (strong, nonatomic) IBOutlet UILongPressGestureRecognizer *longPressed;
+
 @end

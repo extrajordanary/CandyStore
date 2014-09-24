@@ -276,8 +276,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="i0f-lW-Jeg">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i0f-lW-Jeg">
                                 <rect key="frame" x="-4" y="0.0" width="608" height="556"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="i0f-lW-Jeg" secondAttribute="height" multiplier="1:1" id="Rak-zw-f82"/>
                                 </constraints>
@@ -289,6 +290,7 @@
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="i0f-lW-Jeg" secondAttribute="centerY" id="Ekg-BX-01B"/>
                             <constraint firstAttribute="trailingMargin" secondItem="i0f-lW-Jeg" secondAttribute="trailing" constant="-20" id="HBR-Km-JtB"/>
