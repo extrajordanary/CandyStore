@@ -28,6 +28,11 @@ static NSString* const kFiles = @"files";
     return self;
 }
 
+- (void) addComment:(Comment *)comment
+{
+    [self.objects addObject:comment];
+}
+
 - (void)parseAndAddComments:(NSArray*)comments toArray:(NSMutableArray*)destinationArray //1
 {
     for (NSDictionary* item in comments) {
