@@ -52,28 +52,6 @@ static NSString* const kFiles = @"files";
     }
 }
 
-//- (void)import
-//{
-//    NSURL* url = [NSURL URLWithString:[kBaseURL stringByAppendingPathComponent:kComments]]; //1
-//    
-//    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url];
-//    request.HTTPMethod = @"GET"; //2
-//    [request addValue:@"application/json" forHTTPHeaderField:@"Accept"]; //3
-//    
-//    NSURLSessionConfiguration* config = [NSURLSessionConfiguration defaultSessionConfiguration]; //4
-//    NSURLSession* session = [NSURLSession sessionWithConfiguration:config];
-//    
-//    NSURLSessionDataTask* dataTask = [session dataTaskWithRequest:request
-//                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) { //5
-//                                                    if (error == nil) {
-//                                                        NSArray* responseArray = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL]; //6
-//                                                        [self parseAndAddComments:responseArray toArray:self.objects]; //7
-//                                                    }
-//                                                }];
-//    
-//    [dataTask resume]; //8
-//}
-
 - (void)import:(void (^)())block
 {
     NSURL* url = [NSURL URLWithString:[kBaseURL stringByAppendingPathComponent:kComments]]; //1

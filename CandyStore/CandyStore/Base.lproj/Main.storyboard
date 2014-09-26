@@ -52,45 +52,6 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewComment" id="5Oz-eA-o7k" customClass="CommentInputTableViewCell">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Oz-eA-o7k" id="seq-t0-csP">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DmT-bq-oas">
-                                            <rect key="frame" x="8" y="7" width="524" height="30"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="tsE-fc-1sg"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t8y-R2-aou">
-                                            <rect key="frame" x="532" y="7" width="60" height="30"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="60" id="pWW-6T-JMt"/>
-                                                <constraint firstAttribute="height" constant="30" id="y5j-uw-oiU"/>
-                                            </constraints>
-                                            <state key="normal" title="SEND">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="sendComment:" destination="kOd-IS-E9R" eventType="touchDown" id="9dE-kh-F8L"/>
-                                            </connections>
-                                        </button>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="t8y-R2-aou" firstAttribute="leading" secondItem="DmT-bq-oas" secondAttribute="trailing" id="3Mc-Bf-1Wf"/>
-                                        <constraint firstAttribute="centerY" secondItem="t8y-R2-aou" secondAttribute="centerY" id="JWb-eT-txX"/>
-                                        <constraint firstAttribute="centerY" secondItem="DmT-bq-oas" secondAttribute="centerY" id="Ogf-Jo-HK3"/>
-                                        <constraint firstItem="DmT-bq-oas" firstAttribute="leading" secondItem="seq-t0-csP" secondAttribute="leadingMargin" id="i6X-U4-nyS"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="t8y-R2-aou" secondAttribute="trailing" id="ua6-fJ-nfk"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="commentInput" destination="DmT-bq-oas" id="Avl-m3-muB"/>
-                                </connections>
-                            </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Comment" id="gFd-2t-Qme">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gFd-2t-Qme" id="610-yz-D9P">

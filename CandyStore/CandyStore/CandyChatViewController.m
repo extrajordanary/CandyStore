@@ -7,7 +7,6 @@
 //
 
 #import "CandyChatViewController.h"
-#import "CommentInputTableViewCell.h"
 #import "Comment.h"
 #import "CommentLog.h"
 
@@ -29,13 +28,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
+    // Do any additional setup after loading the view.
     commentLog = [[CommentLog alloc] init];
     commentCount = 0;
-    
-//    myTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(updateComments) userInfo:nil repeats:YES];
-
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -83,22 +79,8 @@
     [commentLog persist:newComment withUpdate:^(){ [self updateComments]; }];
 }
 
-
-- (IBAction)sendComment:(id)sender {
-    NSLog(@"new comment");
-    commentCount++;
-    Comment *newComment = [[Comment alloc] init];
-    
-    NSString *commentText = commentInput.text;
-    newComment.text = commentText;
-    commentInput.text = @""; // reset input box to empty
-    
-//    newComment.text = [NSString stringWithFormat:@"comment number %i", numRows];
-    
-    [commentLog persist:newComment withUpdate:^(){ [self updateComments]; }];
-}
-
 - (void) updateComments {
+    self.commentObjects = commentLog.objects;
     [self.tableView reloadData];
 }
 
