@@ -136,7 +136,11 @@
                                 <segue destination="kOd-IS-E9R" kind="show" id="JVK-dy-ntg"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="wMx-Pe-yKA"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="wMx-Pe-yKA">
+                            <connections>
+                                <segue destination="LmP-eo-1gk" kind="show" identifier="addCandy" id="odV-Bo-mFs"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SC0-T6-1De" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -409,4 +413,7 @@
     <resources>
         <image name="hedgehogChocolate.jpg" width="1024" height="768"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="odV-Bo-mFs"/>
+    </inferredMetricsTieBreakers>
 </document>

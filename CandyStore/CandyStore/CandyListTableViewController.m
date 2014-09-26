@@ -18,6 +18,7 @@
 @end
 
 @implementation CandyListTableViewController {
+    NSManagedObjectContext *theContext;
     BOOL reloadTable;
 }
 
@@ -29,6 +30,8 @@
 }
 
 - (void) viewWillAppear:(BOOL)animated {
+    theContext = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
+
     // add each of the candy objects to self.candyObjects array
     [self updateCandyObjectsArray];
     
@@ -91,22 +94,17 @@
         NSIndexPath *selectedIndexPath = self.tableView.indexPathForSelectedRow;
         candyDetailsViewController.candy = self.candyObjects[selectedIndexPath.row];
     } else if ([segue.identifier isEqualToString:@"addCandy"]) {
-//        AddCandyViewController *addCandyViewController = [segue destinationViewController];
-//        NSIndexPath *selectedIndexPath = self.tableView.indexPathForSelectedRow;
-//        addCandyViewController.candy = self.candyObjects[selectedIndexPath.row]; // create new empty candy
+        CandyDetailsViewController *candyDetailsViewController = [segue destinationViewController];
+        candyDetailsViewController.candy = [self createNewCandy:theContext];
     }
 }
 
 #pragma mark - Candy Objects
 
 - (void) updateCandyObjectsArray {
-
-    // get access to the managed object context
-    NSManagedObjectContext *context = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
-    
     // get entity description for entity we are selecting
     NSEntityDescription *entityDescription = [NSEntityDescription
-                                              entityForName:@"Candy" inManagedObjectContext:context];
+                                              entityForName:@"Candy" inManagedObjectContext:theContext];
     // create a new fetch request
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:entityDescription];
@@ -128,14 +126,14 @@
     NSError *error;
     
     // retrieve results
-    NSArray *array = [context executeFetchRequest:request error:&error]; 
+    NSArray *array = [theContext executeFetchRequest:request error:&error];
     if (array == nil) { 
         //error handling, e.g. display err
     }
 
     if (array.count == 0) {
-        [self createOneCandy:context]; // actually makes 5
-        array = [context executeFetchRequest:request error:&error];
+        [self createOneCandy:theContext]; // actually makes 5
+        array = [theContext executeFetchRequest:request error:&error];
     }
     
     self.candyObjects = array;
@@ -143,14 +141,15 @@
 
 - (void) createOneCandy:(NSManagedObjectContext*)context {
     // actually, create 5 test candies
-    for (int i = 0 ; i < 5; i++) {
+    for (int i = 0 ; i < 3; i++) {
         Candy *newCandy = [NSEntityDescription insertNewObjectForEntityForName:@"Candy" inManagedObjectContext:context];
         
-        NSString *newName = [NSString stringWithFormat:@"Tasty tasty test candy %i",i];
+        NSString *newName = [NSString stringWithFormat:@"Sample Candy %i",i+1];
         NSString *newPic = [NSString stringWithFormat:@"testCandy%i.jpg",i];
 
         newCandy.name = newName;
         newCandy.picturePath = newPic;
+        newCandy.notes = @"Candy Notes - Touch to edit. \n \nYou can also edit the name, picture and map location. Try it out! Then try deleting the sample candies.";
         
         // semi-random location jittered from office location
         double rand1 = ((double)arc4random_uniform(20)/1000)-.01;
@@ -170,4 +169,22 @@
     }
 }
 
+- (Candy*) createNewCandy:(NSManagedObjectContext*)context {
+    Candy *newCandy = [NSEntityDescription insertNewObjectForEntityForName:@"Candy" inManagedObjectContext:context];
+
+    newCandy.name = @"Candy Name - Touch to edit";
+    newCandy.notes = @"Candy Notes - Touch to edit.";
+
+    // create error to pass to the save method
+    NSError *error = nil;
+    
+    // attempt to save the context to persist changes
+    [context save:&error];
+    
+    if (error) {
+        // error handling
+    }
+    
+    return newCandy;
+}
 @end
