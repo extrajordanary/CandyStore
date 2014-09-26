@@ -33,6 +33,7 @@
 		17D7458119D0F8C7003AF0F0 /* testCandy1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 17D7457C19D0F8C7003AF0F0 /* testCandy1.jpg */; };
 		17D7458219D0F8C7003AF0F0 /* testCandy0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 17D7457D19D0F8C7003AF0F0 /* testCandy0.jpg */; };
 		17D745B719D1F277003AF0F0 /* CandyMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D745B619D1F277003AF0F0 /* CandyMapViewController.m */; };
+		17D81E4D19D4F83F00407BCD /* CommentInputTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D81E4C19D4F83F00407BCD /* CommentInputTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,8 @@
 		17D7457D19D0F8C7003AF0F0 /* testCandy0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testCandy0.jpg; sourceTree = "<group>"; };
 		17D745B519D1F277003AF0F0 /* CandyMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CandyMapViewController.h; sourceTree = "<group>"; };
 		17D745B619D1F277003AF0F0 /* CandyMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CandyMapViewController.m; sourceTree = "<group>"; };
+		17D81E4B19D4F83F00407BCD /* CommentInputTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentInputTableViewCell.h; sourceTree = "<group>"; };
+		17D81E4C19D4F83F00407BCD /* CommentInputTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentInputTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +162,8 @@
 				17B5D90719D4C69A003D08A7 /* Comment.m */,
 				17B5D90919D4C6D0003D08A7 /* CommentLog.h */,
 				17B5D90A19D4C6D0003D08A7 /* CommentLog.m */,
+				17D81E4B19D4F83F00407BCD /* CommentInputTableViewCell.h */,
+				17D81E4C19D4F83F00407BCD /* CommentInputTableViewCell.m */,
 				17B5D90C19D4D61A003D08A7 /* CandyChatViewController.h */,
 				17B5D90D19D4D61A003D08A7 /* CandyChatViewController.m */,
 			);
@@ -308,6 +313,7 @@
 				17D745B719D1F277003AF0F0 /* CandyMapViewController.m in Sources */,
 				1781DEC119CCD8CC00EEEECB /* UICandyTableViewCell.m in Sources */,
 				17B5D90E19D4D61B003D08A7 /* CandyChatViewController.m in Sources */,
+				17D81E4D19D4F83F00407BCD /* CommentInputTableViewCell.m in Sources */,
 				17B5D90319D21CDC003D08A7 /* CandyLocation.m in Sources */,
 				17B5D90819D4C69A003D08A7 /* Comment.m in Sources */,
 				17AD79CB19C8F171005F3FF3 /* CandyStore.xcdatamodeld in Sources */,

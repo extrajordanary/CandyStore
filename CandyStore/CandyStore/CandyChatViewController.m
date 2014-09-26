@@ -7,10 +7,13 @@
 //
 
 #import "CandyChatViewController.h"
+#import "CommentInputTableViewCell.h"
 #import "Comment.h"
 #import "CommentLog.h"
 
 @interface CandyChatViewController ()
+
+@property (strong, nonatomic) IBOutlet UITextField *textInput;
 
 @end
 
@@ -20,6 +23,8 @@
     int numRows;
     int commentCount;
     NSTimer *myTimer;
+    
+    UITextField *commentInput;
 }
 
 - (void)viewDidLoad {
@@ -29,12 +34,16 @@
     commentLog = [[CommentLog alloc] init];
     commentCount = 0;
     
-    myTimer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(updateComments) userInfo:nil repeats:YES];
+//    myTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(updateComments) userInfo:nil repeats:YES];
 
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-//    [self.tableView reloadData];
+    [super viewWillAppear:animated];
+    
+    [commentLog import:^(){ [self updateComments]; }];
+    
+    self.commentObjects = commentLog.objects;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,51 +53,49 @@
 
 #pragma mark - Table view data source
 
-// Not using sections
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // get array of comment objects
-    [commentLog import];
-
-    self.commentObjects = commentLog.objects;
-    numRows = (int)[self.commentObjects count] + 1;
+    numRows = (int)[self.commentObjects count];
     return numRows;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell;
-    int row = (int)indexPath.row;
-//    if (indexPath.row == 1) {
-    if (row == 0) {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"NewComment" forIndexPath:indexPath];
-    } else {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"Comment" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Comment" forIndexPath:indexPath];
 
-        long nextCommentNumber = numRows - 1 - indexPath.row;
-        Comment *nextComment = self.commentObjects[nextCommentNumber]; // sub from numRows to get reverse order
-        [cell.textLabel setText:nextComment.text];
-//        [cell.textLabel setText:@"test test test."];
-//
-//    Candy *nextCandy = self.candyObjects[indexPath.row];
-//    [cell.candyName setText:nextCandy.name];
-
-    // reload every other time
-//    reloadTable = YES;
-    }
+    long nextCommentNumber = numRows - 1 - indexPath.row;
+    Comment *nextComment = self.commentObjects[nextCommentNumber]; // sub from numRows to get reverse order
+    [cell.textLabel setText:nextComment.text];
     return cell;
 }
+
+- (IBAction)sendNewComment:(id)sender {
+    NSLog(@"send new comment");
+    commentCount++;
+    Comment *newComment = [[Comment alloc] init];
+    
+    NSString *commentText = self.textInput.text;
+    newComment.text = commentText;
+    self.textInput.text = @""; // reset input box to empty
+    
+    [commentLog persist:newComment withUpdate:^(){ [self updateComments]; }];
+}
+
 
 - (IBAction)sendComment:(id)sender {
     NSLog(@"new comment");
     commentCount++;
     Comment *newComment = [[Comment alloc] init];
-    newComment.text = [NSString stringWithFormat:@"comment number %i", numRows];
     
-    [commentLog persist:newComment];
+    NSString *commentText = commentInput.text;
+    newComment.text = commentText;
+    commentInput.text = @""; // reset input box to empty
+    
+//    newComment.text = [NSString stringWithFormat:@"comment number %i", numRows];
+    
+    [commentLog persist:newComment withUpdate:^(){ [self updateComments]; }];
 }
 
 - (void) updateComments {

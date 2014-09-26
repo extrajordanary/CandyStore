@@ -16,7 +16,8 @@
 
 - (void) addComment:(Comment*)comment;
 
-- (void) import;
-- (void) persist:(Comment*)comment;
+//- (void) import;
+- (void)import:(void (^)())block;
+- (void) persist:(Comment*)comment withUpdate:(void (^)())block;
 
 @end

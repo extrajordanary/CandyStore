@@ -15,8 +15,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" red="0.067663754409999999" green="0.49737424790000001" blue="0.68454908290000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="Eoq-De-VQg">
+                            <rect key="frame" x="0.0" y="64" width="600" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fT1-Ue-9Lu">
+                                    <rect key="frame" x="5" y="5" width="538" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="d20-Od-dSw"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hwj-dS-p73">
+                                    <rect key="frame" x="551" y="5" width="44" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="44" id="1Nw-RX-bwm"/>
+                                        <constraint firstAttribute="height" constant="30" id="feY-Bz-H8f"/>
+                                    </constraints>
+                                    <state key="normal" title="SEND">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="sendNewComment:" destination="kOd-IS-E9R" eventType="touchDown" id="tEA-eI-v98"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="1" green="0.84435032290000001" blue="0.98648021409999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="fT1-Ue-9Lu" firstAttribute="leading" secondItem="Eoq-De-VQg" secondAttribute="leading" constant="5" id="090-da-CVo"/>
+                                <constraint firstAttribute="centerY" secondItem="fT1-Ue-9Lu" secondAttribute="centerY" id="O4s-fy-BO4"/>
+                                <constraint firstAttribute="trailing" secondItem="Hwj-dS-p73" secondAttribute="trailing" constant="5" id="Sup-D1-3jC"/>
+                                <constraint firstAttribute="centerY" secondItem="Hwj-dS-p73" secondAttribute="centerY" id="ZgY-Ym-0Hk"/>
+                                <constraint firstItem="Hwj-dS-p73" firstAttribute="leading" secondItem="fT1-Ue-9Lu" secondAttribute="trailing" constant="8" id="fTl-ve-Fuq"/>
+                            </constraints>
+                        </view>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewComment" id="5Oz-eA-o7k">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewComment" id="5Oz-eA-o7k" customClass="CommentInputTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Oz-eA-o7k" id="seq-t0-csP">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -51,11 +87,15 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="t8y-R2-aou" secondAttribute="trailing" id="ua6-fJ-nfk"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="commentInput" destination="DmT-bq-oas" id="Avl-m3-muB"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Comment" id="gFd-2t-Qme">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gFd-2t-Qme" id="610-yz-D9P">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" red="0.91032082759999999" green="0.97616084250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -64,6 +104,9 @@
                             <outlet property="delegate" destination="kOd-IS-E9R" id="GHr-zz-g1D"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="textInput" destination="fT1-Ue-9Lu" id="Flb-Do-k03"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RaS-0n-oKh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -216,7 +259,7 @@
                             <textView clipsSubviews="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PB1-W4-j5i">
                                 <rect key="frame" x="208" y="120" width="384" height="395"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">These are all the reasons why I love this candy: It has sugar. It has pretty colors. It tastes good. It doesn’t stick to my hair (too bad) when I fall asleep cuddling it at night. I try to eat this candy at least 10 times a week because I read on a Yahoo Answers once that it might have some kind of man-made chemical in it that can fight cancer and Lyme disease. I never brush my teeth after eating it so that the chemicals can stay in my mouth and work for even longer. I’m pretty sure it’s working because I don’t have cancer yet!</mutableString>
+                                <string key="text">These are all the reasons why I love this candy: It has sugar. It has pretty colors. It tastes good. It doesn’t stick to my hair (too bad) when I fall asleep cuddling it at night. I try to eat this candy at least 10 times a week because I read on a Yahoo Answers once that it might have some kind of man-made chemical in it that can fight cancer and Lyme disease. I never brush my teeth after eating it so that the chemicals can stay in my mouth and work for even longer. I’m pretty sure it’s working because I don’t have cancer yet!</string>
                                 <color key="textColor" red="0.067663754406141183" green="0.49737424792167068" blue="0.68454908288043481" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
