@@ -25,6 +25,7 @@
 		17B5D90519D22041003D08A7 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B5D90419D22041003D08A7 /* AddressBook.framework */; };
 		17B5D90819D4C69A003D08A7 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5D90719D4C69A003D08A7 /* Comment.m */; };
 		17B5D90B19D4C6D0003D08A7 /* CommentLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5D90A19D4C6D0003D08A7 /* CommentLog.m */; };
+		17B5D90E19D4D61B003D08A7 /* CandyChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B5D90D19D4D61A003D08A7 /* CandyChatViewController.m */; };
 		17D7457819D0EF7C003AF0F0 /* Candy.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D7457719D0EF7C003AF0F0 /* Candy.m */; };
 		17D7457E19D0F8C7003AF0F0 /* testCandy4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 17D7457919D0F8C7003AF0F0 /* testCandy4.jpg */; };
 		17D7457F19D0F8C7003AF0F0 /* testCandy3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 17D7457A19D0F8C7003AF0F0 /* testCandy3.jpg */; };
@@ -75,6 +76,8 @@
 		17B5D90719D4C69A003D08A7 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
 		17B5D90919D4C6D0003D08A7 /* CommentLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentLog.h; sourceTree = "<group>"; };
 		17B5D90A19D4C6D0003D08A7 /* CommentLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentLog.m; sourceTree = "<group>"; };
+		17B5D90C19D4D61A003D08A7 /* CandyChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CandyChatViewController.h; sourceTree = "<group>"; };
+		17B5D90D19D4D61A003D08A7 /* CandyChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CandyChatViewController.m; sourceTree = "<group>"; };
 		17D7457619D0EF7C003AF0F0 /* Candy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Candy.h; sourceTree = SOURCE_ROOT; };
 		17D7457719D0EF7C003AF0F0 /* Candy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Candy.m; sourceTree = SOURCE_ROOT; };
 		17D7457919D0F8C7003AF0F0 /* testCandy4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testCandy4.jpg; sourceTree = "<group>"; };
@@ -156,6 +159,8 @@
 				17B5D90719D4C69A003D08A7 /* Comment.m */,
 				17B5D90919D4C6D0003D08A7 /* CommentLog.h */,
 				17B5D90A19D4C6D0003D08A7 /* CommentLog.m */,
+				17B5D90C19D4D61A003D08A7 /* CandyChatViewController.h */,
+				17B5D90D19D4D61A003D08A7 /* CandyChatViewController.m */,
 			);
 			path = CandyStore;
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 				17B5D90B19D4C6D0003D08A7 /* CommentLog.m in Sources */,
 				17D745B719D1F277003AF0F0 /* CandyMapViewController.m in Sources */,
 				1781DEC119CCD8CC00EEEECB /* UICandyTableViewCell.m in Sources */,
+				17B5D90E19D4D61B003D08A7 /* CandyChatViewController.m in Sources */,
 				17B5D90319D21CDC003D08A7 /* CandyLocation.m in Sources */,
 				17B5D90819D4C69A003D08A7 /* Comment.m in Sources */,
 				17AD79CB19C8F171005F3FF3 /* CandyStore.xcdatamodeld in Sources */,

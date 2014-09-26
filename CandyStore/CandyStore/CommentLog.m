@@ -14,7 +14,6 @@ static NSString* const kComments = @"comments";
 static NSString* const kFiles = @"files";
 
 @interface CommentLog ()
-@property (nonatomic, strong) NSMutableArray* objects;
 @end
 
 @implementation CommentLog
@@ -23,7 +22,7 @@ static NSString* const kFiles = @"files";
 {
     self = [super init];
     if (self) {
-        _objects = [NSMutableArray array];
+        self.objects = [NSMutableArray array];
     }
     return self;
 }

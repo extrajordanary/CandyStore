@@ -15,7 +15,6 @@
 @interface CandyDetailsViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *candyImage;
-//@property (weak, nonatomic) IBOutlet UILabel *candyName;
 @property (weak, nonatomic) IBOutlet UITextView *candyNotes;
 @property (weak, nonatomic) IBOutlet UITextField *candyName;
 
