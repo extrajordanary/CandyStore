@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CandyStore/CandyChatViewController.m"
-            timestampString = "433459214.331772"
+            timestampString = "433459921.524277"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "-updateComments"
             landmarkType = "5">
          </BreakpointContent>
