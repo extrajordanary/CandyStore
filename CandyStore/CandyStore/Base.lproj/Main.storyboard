@@ -359,18 +359,45 @@
                                     </mask>
                                 </variation>
                             </mapView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NL8-4I-lKb">
+                                <rect key="frame" x="543" y="98" width="51" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="Fec-9Y-e9C"/>
+                                    <constraint firstAttribute="height" constant="19" id="U4l-C5-hJm"/>
+                                </constraints>
+                                <color key="thumbTintColor" red="0.91032082759999999" green="0.97616084250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Fec-9Y-e9C"/>
+                                        <exclude reference="U4l-C5-hJm"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="toggleEditMode:" destination="qUq-QL-x4E" eventType="valueChanged" id="5Qv-Pm-UXW"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jte-eU-E4X">
+                                <rect key="frame" x="550" y="72" width="35" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="NL8-4I-lKb" firstAttribute="top" secondItem="Jte-eU-E4X" secondAttribute="bottom" constant="5" id="54Y-au-U4l"/>
                             <constraint firstAttribute="centerY" secondItem="i0f-lW-Jeg" secondAttribute="centerY" id="Ekg-BX-01B"/>
                             <constraint firstAttribute="trailingMargin" secondItem="i0f-lW-Jeg" secondAttribute="trailing" constant="-20" id="HBR-Km-JtB"/>
                             <constraint firstItem="F2S-Fn-O2y" firstAttribute="top" secondItem="i0f-lW-Jeg" secondAttribute="bottom" id="Ibo-PK-xcU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="i0f-lW-Jeg" secondAttribute="trailing" constant="8" id="aQq-Oo-CbQ"/>
+                            <constraint firstItem="Jte-eU-E4X" firstAttribute="top" secondItem="pJy-1m-utn" secondAttribute="bottom" constant="8" id="bXv-ar-dLl"/>
                             <constraint firstItem="i0f-lW-Jeg" firstAttribute="leading" secondItem="6zb-Fo-6TP" secondAttribute="leadingMargin" constant="8" id="d93-PV-UIh"/>
                             <constraint firstAttribute="centerX" secondItem="i0f-lW-Jeg" secondAttribute="centerX" id="f4C-mL-7My"/>
                             <constraint firstItem="i0f-lW-Jeg" firstAttribute="leading" secondItem="6zb-Fo-6TP" secondAttribute="leadingMargin" constant="-20" id="nbq-jq-JVe"/>
                             <constraint firstItem="i0f-lW-Jeg" firstAttribute="top" secondItem="6zb-Fo-6TP" secondAttribute="topMargin" id="vWV-OG-Ypm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NL8-4I-lKb" secondAttribute="trailing" constant="-8" id="xNh-tR-WDA"/>
+                            <constraint firstItem="NL8-4I-lKb" firstAttribute="centerX" secondItem="Jte-eU-E4X" secondAttribute="centerX" id="z8w-ya-gFr"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -385,6 +412,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="candyMap" destination="i0f-lW-Jeg" id="b4y-O0-dib"/>
+                        <outlet property="editMode" destination="NL8-4I-lKb" id="81i-tj-iqJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="doa-Ig-gO9" userLabel="First Responder" sceneMemberID="firstResponder"/>
