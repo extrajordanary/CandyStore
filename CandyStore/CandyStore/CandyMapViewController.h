@@ -10,20 +10,14 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h> 
 #import "Candy.h"
-#import "CandyLocation.h"
 
 @class Candy;
 
 @interface CandyMapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 
 @property (strong, nonatomic) IBOutlet MKMapView *candyMap;
-
 @property (strong, nonatomic) CLLocationManager *locationManager;
-
 @property CLLocationCoordinate2D candyLocation;
-
 @property (nonatomic, strong) Candy *candy;
-
-//@property (strong, nonatomic) IBOutlet UILongPressGestureRecognizer *longPressed;
 
 @end

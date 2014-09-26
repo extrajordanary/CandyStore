@@ -7,7 +7,6 @@
 //
 
 #import "CandyMapViewController.h"
-//#import "AppDelegate.h"
 
 @interface CandyMapViewController ()
 
@@ -20,7 +19,7 @@
 #define METERS_PER_MILE 1609.344
 
 @implementation CandyMapViewController {
-    MKPointAnnotation *pressPoint;
+    MKPointAnnotation *candyMarker;
     BOOL isEditable;
 }
 
@@ -39,41 +38,19 @@
     [longPress setMinimumPressDuration:.5];
     [self.candyMap addGestureRecognizer:longPress];
     
-    pressPoint = [[MKPointAnnotation alloc] init];
-    [pressPoint setTitle:self.candy.name];
+    candyMarker = [[MKPointAnnotation alloc] init];
+    [candyMarker setTitle:self.candy.name];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-//    [self startStandardUpdates];
-//    
-//    self.candyMap.showsUserLocation = YES;
-//    isEditable = NO;
-//    
-//    // set up long press detection for editing mode
-//    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(mapViewLongPressed:)];
-//    [longPress setAllowableMovement:10.];
-//    [longPress setMinimumPressDuration:.5];
-//    [self.candyMap addGestureRecognizer:longPress];
-//    
-//    pressPoint = [[MKPointAnnotation alloc] init];
-//    [pressPoint setTitle:self.candy.name];
+    [super viewWillAppear:animated];
     
-//    // get candy location or use current location if not already assigned
-//    if ([self.candy.locationLat doubleValue] != 0 && [self.candy.locationLon doubleValue] != 0) {
-//        self.candyLocation = CLLocationCoordinate2DMake([self.candy.locationLat doubleValue], [self.candy.locationLon doubleValue]);
-//
-//    } else {
-//        self.candyLocation = self.locationManager.location.coordinate;
-//    }
-//
-//    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(self.candyLocation, 3*METERS_PER_MILE, 3*METERS_PER_MILE);
-//    [self.candyMap setRegion:viewRegion animated:YES];
-//
-//    pressPoint.coordinate = self.candyLocation;
-//    [self.candyMap addAnnotation:pressPoint];
+    // this is where the location manager kicks in
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
     // get candy location or use current location if not already assigned
     if ([self.candy.locationLat doubleValue] != 0 && [self.candy.locationLon doubleValue] != 0) {
         self.candyLocation = CLLocationCoordinate2DMake([self.candy.locationLat doubleValue], [self.candy.locationLon doubleValue]);
@@ -85,8 +62,8 @@
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(self.candyLocation, 3*METERS_PER_MILE, 3*METERS_PER_MILE);
     [self.candyMap setRegion:viewRegion animated:YES];
     
-    pressPoint.coordinate = self.candyLocation;
-    [self.candyMap addAnnotation:pressPoint];
+    candyMarker.coordinate = self.candyLocation;
+    [self.candyMap addAnnotation:candyMarker];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -97,12 +74,12 @@
 - (void) viewWillDisappear:(BOOL)animated {
     [self updateCandyCoords];
 }
+
 #pragma mark - Locations
 
 - (void)startStandardUpdates
 {
-    // Create the location manager if this object does not
-    // already have one.
+    // Create the location manager if this object does not already have one.
     if (nil == self.locationManager) {
         self.locationManager = [[CLLocationManager alloc] init];
     }
@@ -136,14 +113,9 @@
 //    }
 }
 
-//- (void) plotCandyPosition {
-//    CandyLocation *candyLocation = [[CandyLocation alloc] initWithName:self.candy.name address:nil coordinate:self.candyLocation];
-//    [self.candyMap addAnnotation:candyLocation];
-//}
-
 - (void) updateCandyCoords {
-    self.candy.locationLat = [NSNumber numberWithDouble:pressPoint.coordinate.latitude];
-    self.candy.locationLon = [NSNumber numberWithDouble:pressPoint.coordinate.longitude];
+    self.candy.locationLat = [NSNumber numberWithDouble:candyMarker.coordinate.latitude];
+    self.candy.locationLon = [NSNumber numberWithDouble:candyMarker.coordinate.longitude];
 
     NSManagedObjectContext *context = self.candy.managedObjectContext;
     NSError *error = nil;
@@ -155,17 +127,15 @@
 
 - (void) mapViewLongPressed:(UILongPressGestureRecognizer*)recognizer {
     if (isEditable) {
-        [self.candyMap removeAnnotation:pressPoint];
+        [self.candyMap removeAnnotation:candyMarker];
         
         CGPoint point = [recognizer locationInView:self.candyMap];
         
         CLLocationCoordinate2D tapPoint = [self.candyMap convertPoint:point toCoordinateFromView:self.view];
         
-        //    MKPointAnnotation *point1 = [[MKPointAnnotation alloc] init];
+        candyMarker.coordinate = tapPoint;
         
-        pressPoint.coordinate = tapPoint;
-        
-        [self.candyMap addAnnotation:pressPoint];
+        [self.candyMap addAnnotation:candyMarker];
     }
 }
 
