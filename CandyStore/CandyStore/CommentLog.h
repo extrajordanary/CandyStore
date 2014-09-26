@@ -11,6 +11,7 @@
 @class Comment;
 
 @interface CommentLog : NSObject
+
 @property (nonatomic, strong) NSMutableArray* objects;
 
 - (void) addComment:(Comment*)comment;

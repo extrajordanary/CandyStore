@@ -10,7 +10,7 @@
 #import "Comment.h"
 
 static NSString* const kBaseURL = @"http://localhost:3000/";
-static NSString* const kComments = @"comments";
+static NSString* const kComments = @"comments2";
 static NSString* const kFiles = @"files";
 
 @interface CommentLog ()
@@ -36,7 +36,19 @@ static NSString* const kFiles = @"files";
 {
     for (NSDictionary* item in comments) {
         Comment* comment = [[Comment alloc] initWithDictionary:item]; //2
-        [destinationArray addObject:comment];
+        
+        // rule out duplicate entries
+        BOOL duplicate = NO;
+        for (int i = 0; i < [destinationArray count]; i++) {
+            Comment *existingComment = destinationArray[i];
+            if ([comment._id isEqualToString:existingComment._id]) {
+                duplicate = YES;
+                break;
+            }
+        }
+        if (!duplicate) {
+            [destinationArray addObject:comment];
+        }
     }
     
 //    if (self.delegate) {

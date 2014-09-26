@@ -18,15 +18,23 @@
     CommentLog *commentLog;
     
     int numRows;
+    int commentCount;
+    NSTimer *myTimer;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    commentLog = [[CommentLog alloc] init];
+    commentCount = 0;
+    
+    myTimer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(updateComments) userInfo:nil repeats:YES];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [self.tableView reloadData];
+//    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,8 +56,7 @@
 
     self.commentObjects = commentLog.objects;
     numRows = (int)[self.commentObjects count] + 1;
-//    return numRows;
-    return 5;
+    return numRows;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -61,8 +68,10 @@
     } else {
         cell = [tableView dequeueReusableCellWithIdentifier:@"Comment" forIndexPath:indexPath];
 
-        Comment *nextComment = self.commentObjects[numRows - indexPath.row]; // sub from numRows to get reverse order
+        long nextCommentNumber = numRows - 1 - indexPath.row;
+        Comment *nextComment = self.commentObjects[nextCommentNumber]; // sub from numRows to get reverse order
         [cell.textLabel setText:nextComment.text];
+//        [cell.textLabel setText:@"test test test."];
 //
 //    Candy *nextCandy = self.candyObjects[indexPath.row];
 //    [cell.candyName setText:nextCandy.name];
@@ -75,6 +84,15 @@
 
 - (IBAction)sendComment:(id)sender {
     NSLog(@"new comment");
+    commentCount++;
+    Comment *newComment = [[Comment alloc] init];
+    newComment.text = [NSString stringWithFormat:@"comment number %i", numRows];
+    
+    [commentLog persist:newComment];
+}
+
+- (void) updateComments {
+    [self.tableView reloadData];
 }
 
 /*
