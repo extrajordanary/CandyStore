@@ -1,6 +1,6 @@
 //
-//  CandyStore.m
-//  CandyStore
+//  Candy.m
+//  Candy
 //
 //  Created by Jordan on 9/22/14.
 //  Copyright (c) 2014 Byjor. All rights reserved.
@@ -15,6 +15,6 @@
 @dynamic locationLon;
 @dynamic name;
 @dynamic notes;
-@dynamic picturePath;
+@dynamic image;
 
 @end

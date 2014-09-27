@@ -8,8 +8,9 @@
 
 #import "CandyPictureViewController.h"
 
-@interface CandyPictureViewController ()
+@interface CandyPictureViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
+@property (nonatomic, strong) UIImage* picture;
 @property (nonatomic, strong) UIImageView *imageView;
 
 - (void)centerScrollViewContents;
@@ -37,7 +38,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     // 1
-    UIImage *image = [UIImage imageNamed:self.candy.picturePath];
+    UIImage *image = [UIImage imageWithData:self.candy.image];
     self.imageView = [[UIImageView alloc] initWithImage:image];
     self.imageView.frame = (CGRect){.origin=CGPointMake(0.0f, 0.0f), .size=image.size};
     [self.scrollView addSubview:self.imageView];
@@ -80,6 +81,10 @@
     
     // 6
     [self centerScrollViewContents];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
 }
 
 #pragma mark - Scroll View
@@ -132,6 +137,45 @@
     CGFloat newZoomScale = self.scrollView.zoomScale / 1.5f;
     newZoomScale = MAX(newZoomScale, self.scrollView.minimumZoomScale);
     [self.scrollView setZoomScale:newZoomScale animated:YES];
+}
+
+#pragma mark - Images
+- (IBAction) takePicture:(id)sender
+{
+    UIImagePickerController* imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.delegate = self;
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    } else {
+        imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+    
+    [self presentViewController:imagePicker animated:YES completion:^{
+        
+    }];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo
+{
+    [self dismissModalViewControllerAnimated:YES];
+    self.picture = image;
+    self.imageView.image = image;
+    
+    // save current image as candy image
+    self.candy.image = UIImagePNGRepresentation(image);
+    NSManagedObjectContext *context = self.candy.managedObjectContext;
+    NSError *error = nil;
+    [context save:&error];
+    if (error) {
+        // error handling
+    }
 }
 
 /*

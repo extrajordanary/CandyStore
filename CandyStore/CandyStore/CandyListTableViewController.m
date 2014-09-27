@@ -56,7 +56,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // get number of Candy Objects
-//    [self updateCandyObjectsArray];
     int numRows = (int)[self.candyObjects count];
     return numRows;
 }
@@ -67,7 +66,8 @@
     Candy *nextCandy = self.candyObjects[indexPath.row];
     [cell.candyName setText:nextCandy.name];
     
-    UIImage *picture = [UIImage imageNamed:nextCandy.picturePath];
+//    UIImage *picture = [UIImage imageNamed:nextCandy.picturePath];
+    UIImage *picture = [UIImage imageWithData:nextCandy.image];
     [cell.candyThumbnail setImage:picture];
     
     // reload every other time
@@ -148,7 +148,8 @@
         NSString *newPic = [NSString stringWithFormat:@"testCandy%i.jpg",i];
 
         newCandy.name = newName;
-        newCandy.picturePath = newPic;
+//        newCandy.picturePath = newPic;
+        newCandy.image = UIImagePNGRepresentation([UIImage imageNamed:newPic]);
         newCandy.notes = @"Candy Notes - Touch to edit. \n \nYou can also edit the name, picture and map location. Try it out! Then try deleting the sample candies.";
         
         // semi-random location jittered from office location
@@ -172,8 +173,12 @@
 - (Candy*) createNewCandy:(NSManagedObjectContext*)context {
     Candy *newCandy = [NSEntityDescription insertNewObjectForEntityForName:@"Candy" inManagedObjectContext:context];
 
-    newCandy.name = @"Candy Name - Touch to edit";
+    newCandy.name = @"Candy Name";
     newCandy.notes = @"Candy Notes - Touch to edit.";
+    
+    // add default picture
+    newCandy.image = UIImagePNGRepresentation([UIImage imageNamed:@"defaultPhoto.png"]);
+
 
     // create error to pass to the save method
     NSError *error = nil;

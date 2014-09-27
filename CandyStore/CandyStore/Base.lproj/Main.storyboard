@@ -327,6 +327,14 @@
                             </mask>
                         </variation>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Y4i-1W-tGl">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="ecY-hL-cSS">
+                            <connections>
+                                <action selector="takePicture:" destination="tY4-ah-4My" id="AST-IX-HQm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="scrollView" destination="we4-9s-QvP" id="zen-KC-MVi"/>
                     </connections>

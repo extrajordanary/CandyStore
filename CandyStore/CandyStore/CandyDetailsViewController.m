@@ -37,7 +37,7 @@
 - (void) viewWillAppear:(BOOL)animated {
     [self.candyName setText:self.candy.name];
     
-    UIImage *picture = [UIImage imageNamed:self.candy.picturePath];
+    UIImage *picture = [UIImage imageWithData:self.candy.image];
     [self.candyImage setImage:picture];
     
     [self.candyNotes setText:self.candy.notes];

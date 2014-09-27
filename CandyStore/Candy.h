@@ -1,6 +1,6 @@
 //
-//  CandyStore.h
-//  CandyStore
+//  Candy.h
+//  Candy
 //
 //  Created by Jordan on 9/22/14.
 //  Copyright (c) 2014 Byjor. All rights reserved.
@@ -16,6 +16,6 @@
 @property (nonatomic, retain) NSNumber * locationLon;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * notes;
-@property (nonatomic, retain) NSString * picturePath;
+@property (nonatomic, retain) NSData * image;
 
 @end
