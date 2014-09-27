@@ -9,6 +9,7 @@
 #import "CandyDetailsViewController.h"
 #import "CandyPictureViewController.h"
 #import "CandyMapViewController.h"
+#import "CandyListTableViewController.h"
 
 //@class CandyMapViewController;
 
@@ -20,7 +21,9 @@
 
 @end
 
-@implementation CandyDetailsViewController
+@implementation CandyDetailsViewController {
+    BOOL isDeleted;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,6 +38,9 @@
 }
 
 - (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    isDeleted = NO;
     [self.candyName setText:self.candy.name];
     
     UIImage *picture = [UIImage imageWithData:self.candy.image];
@@ -44,17 +50,22 @@
 }
 
 - (void) viewWillDisappear:(BOOL)animated {
-    self.candy.notes = self.candyNotes.text;
-    self.candy.name = self.candyName.text;
+    [super viewWillDisappear:animated];
     
-    if (self.candy.hasChanges){ // runs every time but doesnt need to TODO
-        NSManagedObjectContext *context = self.candy.managedObjectContext;
-        NSError *error = nil;
-        [context save:&error];
-        if (error) {
-            // error handling
+    if (!isDeleted) {
+        self.candy.notes = self.candyNotes.text;
+        self.candy.name = self.candyName.text;
+        
+        if (self.candy.hasChanges){ // runs every time but doesnt need to TODO
+            NSManagedObjectContext *context = self.candy.managedObjectContext;
+            NSError *error = nil;
+            [context save:&error];
+            if (error) {
+                // error handling
+            }
         }
     }
+
 }
 
 #pragma mark - Navigation
@@ -69,10 +80,16 @@
      } else if ([segue.identifier isEqualToString:@"viewMap"]) {
          CandyMapViewController *candyMapViewController = [segue destinationViewController];
          candyMapViewController.candy = self.candy;
+     } else if ([segue.identifier isEqualToString:@"deleteCandy"]) {
+         NSManagedObjectContext *context = self.candy.managedObjectContext;
+         [context deleteObject:self.candy];
+         NSError *error = nil;
+         [context save:&error];
+         if (error) {
+             // error handling
+         }
+         isDeleted = YES;
      }
  }
-
-- (IBAction)deleteCandy:(id)sender {
-}
 
 @end

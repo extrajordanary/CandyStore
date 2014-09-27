@@ -15,6 +15,4 @@
 
 @property (nonatomic, strong) Candy *candy;
 
-- (IBAction)deleteCandy:(id)sender;
-
 @end
