@@ -127,15 +127,11 @@
 
 - (void) mapViewLongPressed:(UILongPressGestureRecognizer*)recognizer {
     if (isEditable) {
-        [self.candyMap removeAnnotation:candyMarker];
-        
         CGPoint point = [recognizer locationInView:self.candyMap];
         
         CLLocationCoordinate2D tapPoint = [self.candyMap convertPoint:point toCoordinateFromView:self.view];
         
         candyMarker.coordinate = tapPoint;
-        
-        [self.candyMap addAnnotation:candyMarker];
     }
 }
 

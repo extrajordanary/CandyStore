@@ -37,11 +37,11 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [commentLog import:^(){ dispatch_async(dispatch_get_main_queue(), ^(void){
-                [self updateComments];
-            });
-        }
-    ];
+    [commentLog import:^(){
+        dispatch_async(dispatch_get_main_queue(), ^(void){
+            [self updateComments];
+        });
+    }];
     
     self.commentObjects = commentLog.objects;
 }
@@ -80,11 +80,11 @@
     newComment.text = commentText;
     self.textInput.text = @""; // reset input box to empty
     
-    [commentLog persist:newComment withUpdate:^(){ dispatch_async(dispatch_get_main_queue(), ^(void){
-        [self updateComments];
-    });
-    }
-     ];
+    [commentLog persist:newComment withUpdate:^(){
+        dispatch_async(dispatch_get_main_queue(), ^(void){
+            [self updateComments];
+        });
+    }];
 }
 
 - (void) updateComments {

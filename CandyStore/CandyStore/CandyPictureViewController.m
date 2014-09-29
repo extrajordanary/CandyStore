@@ -7,6 +7,7 @@
 //
 
 #import "CandyPictureViewController.h"
+#import "Candy.h"
 
 @interface CandyPictureViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 

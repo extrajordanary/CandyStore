@@ -10,6 +10,7 @@
 #import "CandyPictureViewController.h"
 #import "CandyMapViewController.h"
 #import "CandyListTableViewController.h"
+#import "AppDelegate.h"
 
 //@class CandyMapViewController;
 
@@ -21,9 +22,7 @@
 
 @end
 
-@implementation CandyDetailsViewController {
-    BOOL isDeleted;
-}
+@implementation CandyDetailsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,7 +39,6 @@
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    isDeleted = NO;
     [self.candyName setText:self.candy.name];
     
     UIImage *picture = [UIImage imageWithData:self.candy.image];
@@ -52,7 +50,11 @@
 - (void) viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
-    if (!isDeleted) {
+    NSManagedObjectContext *context = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
+
+    self.candy = (Candy *)[context existingObjectWithID:self.candy.objectID error:nil];
+    
+    if (self.candy) {
         self.candy.notes = self.candyNotes.text;
         self.candy.name = self.candyName.text;
         
@@ -88,7 +90,6 @@
          if (error) {
              // error handling
          }
-         isDeleted = YES;
      }
  }
 

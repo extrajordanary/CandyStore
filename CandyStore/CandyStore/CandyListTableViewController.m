@@ -30,6 +30,8 @@
 }
 
 - (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
     theContext = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
 
     // add each of the candy objects to self.candyObjects array
@@ -56,7 +58,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // get number of Candy Objects
-    int numRows = (int)[self.candyObjects count];
+    NSInteger numRows = [self.candyObjects count];
     return numRows;
 }
 
@@ -66,7 +68,6 @@
     Candy *nextCandy = self.candyObjects[indexPath.row];
     [cell.candyName setText:nextCandy.name];
     
-//    UIImage *picture = [UIImage imageNamed:nextCandy.picturePath];
     UIImage *picture = [UIImage imageWithData:nextCandy.image];
     [cell.candyThumbnail setImage:picture];
     
@@ -140,7 +141,7 @@
 }
 
 - (void) createOneCandy:(NSManagedObjectContext*)context {
-    // actually, create 5 test candies
+    // actually, create 3 test candies
     for (int i = 0 ; i < 3; i++) {
         Candy *newCandy = [NSEntityDescription insertNewObjectForEntityForName:@"Candy" inManagedObjectContext:context];
         
@@ -148,7 +149,6 @@
         NSString *newPic = [NSString stringWithFormat:@"testCandy%i.jpg",i];
 
         newCandy.name = newName;
-//        newCandy.picturePath = newPic;
         newCandy.image = UIImagePNGRepresentation([UIImage imageNamed:newPic]);
         newCandy.notes = @"Candy Notes - Touch to edit. \n \nYou can also edit the name, picture and map location. Try it out! Then try deleting the sample candies.";
         

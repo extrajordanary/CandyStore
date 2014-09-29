@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Candy.h"
 
 @class Candy;
 
